@@ -31,25 +31,44 @@ struct Post {
     var description: String
 }
 
+
+
+
 //construct fake user Alan for testing.
-let alanPost = Post(type: "CS170", title: "CS170 HW Party" , location: "Zoom", date: [Date()], image: UIImage(named: "grace"), user: "alan", userImage: UIImage(named: "Alan"), description: "cs170 MT study yes")
-let lndPost = Post(type: "Berkeley", title: "movie Party" , location: "Google Hangout", date: [Date()], image: UIImage(named: "grace"), user: "alan", userImage: UIImage(named: "Alan"), description: "ZOOM Cinema")
-let Alan = User(username: "alan", profilePic: UIImage(named: "Alan"), posts: [alanPost, lndPost], uid: "12AB", friends: ["99BA"])
-let Grace = User(username: "grace", profilePic: UIImage(named: "grace"), posts: [], uid: "99BA", friends: ["12AB"])
+let alanPost = Post(type: "CS170", title: "CS170 HW Party" , location: "Zoom", date: [Date()], image: UIImage(named: "hw"), user: "alan", userImage: UIImage(named: "alan"), description: "cs170 MT study yes")
+
+let lucyPost = Post(type: "Berkeley", title: "movie Party" , location: "Google Hangout", date: [Date()], image: UIImage(named: "movies"), user: "lucy", userImage: UIImage(named: "lucy"), description: "ZOOM Cinema")
+let gracePost = Post(type: "Unit1", title: "game night" , location: "Google Hangout", date: [Date()], image: UIImage(named: "game"), user: "grace", userImage: UIImage(named: "grace"), description: "lets have fun gaming")
+
+
+
+var Grace = User(username: "grace", profilePic: UIImage(named: "grace"), uid: "99BA", friends: ["12AB"], typeToPosts:["Unit 1" : [gracePost]], postsHosted: [gracePost], postsJoined: [alanPost, lucyPost])
+
+var Alan = User(username: "alan", profilePic: UIImage(named: "alan"), uid: "12AB", friends: ["99BA"], typeToPosts: ["CS170" : [alanPost]], postsHosted: [alanPost], postsJoined: [gracePost])
+
 
 
 //construct fake user Grace fro testing.
 
 class virtualParties {
-    var posts: [Post]?
-    var currentUser: User
+    var currentUser: User!
+    var allPosts: [Post] = []
+
+    
     init() {
         currentUser = Grace
-        posts = nil
-    }
-    func getPost(user: User) {
-        for i in Alan.posts {
-            posts?.append(i)
+        for p in Grace.postsHosted {
+            allPosts.append(p)
+        }
+        for p in Grace.postsJoined {
+            allPosts.append(p)
         }
     }
+    
+    func addPost(post: Post) {
+        allPosts.append(post)
+    }
+
+    
+    
 }

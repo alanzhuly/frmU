@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32BF1FC9242AFAD40021B918 /* VirtualPartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FC8242AFAD40021B918 /* VirtualPartyViewController.swift */; };
+		32BF1FCB242AFD3E0021B918 /* TypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FCA242AFD3E0021B918 /* TypeCollectionViewCell.swift */; };
+		32BF1FCD242B05070021B918 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FCC242B05070021B918 /* PostTableViewCell.swift */; };
+		32BF1FCF242B08C40021B918 /* PartyTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FCE242B08C40021B918 /* PartyTimeCollectionViewCell.swift */; };
 		D8EDC40C2429796E00043589 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EDC40B2429796E00043589 /* AppDelegate.swift */; };
 		D8EDC40E2429796E00043589 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EDC40D2429796E00043589 /* SceneDelegate.swift */; };
-		D8EDC4102429796E00043589 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EDC40F2429796E00043589 /* ViewController.swift */; };
 		D8EDC4132429796E00043589 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8EDC4112429796E00043589 /* Main.storyboard */; };
 		D8EDC4162429796E00043589 /* frmU.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8EDC4142429796E00043589 /* frmU.xcdatamodeld */; };
 		D8EDC4182429797200043589 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8EDC4172429797200043589 /* Assets.xcassets */; };
@@ -38,10 +41,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32BF1FC5242AFA6C0021B918 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = frmU/ViewControllers/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		32BF1FC8242AFAD40021B918 /* VirtualPartyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualPartyViewController.swift; sourceTree = "<group>"; };
+		32BF1FCA242AFD3E0021B918 /* TypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		32BF1FCC242B05070021B918 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		32BF1FCE242B08C40021B918 /* PartyTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyTimeCollectionViewCell.swift; sourceTree = "<group>"; };
 		D8EDC4082429796E00043589 /* frmU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = frmU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8EDC40B2429796E00043589 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8EDC40D2429796E00043589 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D8EDC40F2429796E00043589 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D8EDC4122429796E00043589 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8EDC4152429796E00043589 /* frmU.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = frmU.xcdatamodel; sourceTree = "<group>"; };
 		D8EDC4172429797200043589 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32BF1FC7242AFA8D0021B918 /* Parties */ = {
+			isa = PBXGroup;
+			children = (
+				32BF1FC8242AFAD40021B918 /* VirtualPartyViewController.swift */,
+			);
+			path = Parties;
+			sourceTree = "<group>";
+		};
 		D8EDC3FF2429796E00043589 = {
 			isa = PBXGroup;
 			children = (
@@ -109,7 +124,6 @@
 				D8EDC40D2429796E00043589 /* SceneDelegate.swift */,
 				D8EDC440242AB0E500043589 /* Model */,
 				D8EDC441242AB0F600043589 /* View */,
-				D8EDC40F2429796E00043589 /* ViewController.swift */,
 				D8EDC442242AB13700043589 /* ViewControllers */,
 				D8EDC4172429797200043589 /* Assets.xcassets */,
 				D8EDC41C2429797200043589 /* Info.plist */,
@@ -150,6 +164,9 @@
 			children = (
 				D8EDC4112429796E00043589 /* Main.storyboard */,
 				D8EDC4192429797200043589 /* LaunchScreen.storyboard */,
+				32BF1FCA242AFD3E0021B918 /* TypeCollectionViewCell.swift */,
+				32BF1FCC242B05070021B918 /* PostTableViewCell.swift */,
+				32BF1FCE242B08C40021B918 /* PartyTimeCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,18 +174,12 @@
 		D8EDC442242AB13700043589 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D8EDC443242AB14900043589 /* Parties */,
+				32BF1FC5242AFA6C0021B918 /* ViewController.swift */,
+				32BF1FC7242AFA8D0021B918 /* Parties */,
 				D8EDC444242AB15800043589 /* Make */,
 				D8EDC445242AB15D00043589 /* You */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		D8EDC443242AB14900043589 /* Parties */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Parties;
 			sourceTree = "<group>";
 		};
 		D8EDC444242AB15800043589 /* Make */ = {
@@ -317,8 +328,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8EDC447242AB1F600043589 /* PartyData.swift in Sources */,
-				D8EDC4102429796E00043589 /* ViewController.swift in Sources */,
 				D8EDC40C2429796E00043589 /* AppDelegate.swift in Sources */,
+				32BF1FCF242B08C40021B918 /* PartyTimeCollectionViewCell.swift in Sources */,
+				32BF1FC9242AFAD40021B918 /* VirtualPartyViewController.swift in Sources */,
+				32BF1FCD242B05070021B918 /* PostTableViewCell.swift in Sources */,
+				32BF1FCB242AFD3E0021B918 /* TypeCollectionViewCell.swift in Sources */,
 				D8EDC40E2429796E00043589 /* SceneDelegate.swift in Sources */,
 				D8EDC4162429796E00043589 /* frmU.xcdatamodeld in Sources */,
 				D8EDC449242ACAB300043589 /* User.swift in Sources */,
