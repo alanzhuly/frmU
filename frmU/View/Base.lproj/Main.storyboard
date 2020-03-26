@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X8c-cn-bCz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -36,21 +36,36 @@
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="28"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2mq-hC-MU7">
-                                <rect key="frame" x="50" y="692" width="314" height="100"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="uwa-Da-SOL"/>
-                                </constraints>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zY2-4t-Gkz" customClass="GIDSignInButton">
+                                <rect key="frame" x="87" y="494" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <action selector="signinpressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="SFO-E9-y2r"/>
+                                </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXq-3v-ulM">
+                                <rect key="frame" x="157" y="718" width="100" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.8901597261428833" green="0.94593054056167603" blue="0.2963874340057373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="logIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Na-ab-WlW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ko8-TR-UhI">
+                                <rect key="frame" x="87" y="669" width="240" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Mxw-0I-Stx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="1vG-Fi-3yS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2mq-hC-MU7" secondAttribute="bottom" constant="70" id="At1-LL-Onr"/>
                             <constraint firstItem="og4-ZQ-uYY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="C57-vI-8iB"/>
-                            <constraint firstItem="2mq-hC-MU7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Euz-eu-Rxs"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2mq-hC-MU7" secondAttribute="trailing" constant="50" id="Ihf-VR-MRb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mxw-0I-Stx" secondAttribute="trailing" constant="30" id="Ksb-IQ-WRU"/>
                             <constraint firstItem="Mxw-0I-Stx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PTw-xc-uxC"/>
                             <constraint firstItem="og4-ZQ-uYY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RUS-Xz-zqE"/>
@@ -58,15 +73,19 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="og4-ZQ-uYY" secondAttribute="trailing" constant="70" id="VnV-Qb-npf"/>
                             <constraint firstItem="Mxw-0I-Stx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y10-6F-v0a"/>
                             <constraint firstItem="Z9j-iT-Kyh" firstAttribute="top" secondItem="og4-ZQ-uYY" secondAttribute="bottom" constant="1" id="cGL-b8-va0"/>
-                            <constraint firstItem="2mq-hC-MU7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="qGG-iu-Ecd"/>
                             <constraint firstItem="Z9j-iT-Kyh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yhT-RR-S6h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="signInButton" destination="zY2-4t-Gkz" id="9M5-0p-MgM"/>
+                        <outlet property="welcome" destination="ko8-TR-UhI" id="7eo-qd-G3l"/>
+                        <segue destination="X8c-cn-bCz" kind="presentation" identifier="logIn" modalPresentationStyle="fullScreen" id="eVu-cs-zEL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="116"/>
+            <point key="canvasLocation" x="325" y="116"/>
         </scene>
         <!--Virtual Parties-->
         <scene sceneID="If0-TB-mSJ">
@@ -1073,7 +1092,22 @@ Google Calendar
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bix-yR-QgE"/>
                     </view>
-                    <navigationItem key="navigationItem" title="You" id="yHB-fx-Gqh"/>
+                    <navigationItem key="navigationItem" title="You" id="yHB-fx-Gqh">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="LUc-F0-pUg">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QlL-Eo-bgj">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOut:" destination="Uyg-0k-guB" eventType="touchUpInside" id="tNt-0r-QLt"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="logOut:" destination="Uyg-0k-guB" id="nK8-jh-xoH"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="logout" modalPresentationStyle="fullScreen" id="4A9-32-k5z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="eventsHostedTableView" destination="2IT-Xl-tWl" id="Y7v-qH-vdj"/>
                         <outlet property="eventsJoinedTableView" destination="XSa-vD-Ppx" id="Ios-iJ-FAe"/>

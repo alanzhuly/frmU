@@ -51,6 +51,7 @@ var Alan = User(username: "alan", profilePic: UIImage(named: "alan"), uid: "12AB
 //construct fake user Grace fro testing.
 
 //global variable for this User.
+var signedIn = false
 var globalUser = Alan
 
 class virtualParties {

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import GoogleSignIn
 
 class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -91,4 +93,14 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         }
         return cellToReturn
     }
+    
+    @IBAction func logOut(_ sender: Any) {
+        print(globalUser.username)
+        GIDSignIn.sharedInstance()?.signOut()
+        signedIn = false
+        performSegue(withIdentifier: "logout", sender: sender)
+    }
+    
+    
+    
 }
