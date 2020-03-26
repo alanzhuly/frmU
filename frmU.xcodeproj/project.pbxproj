@@ -18,6 +18,7 @@
 		32BF1FD3242C570A0021B918 /* CreatePartyTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FD2242C570A0021B918 /* CreatePartyTypeViewController.swift */; };
 		D80B37F1242C1AFC0034660C /* MakeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B37F0242C1AFC0034660C /* MakeDetailViewController.swift */; };
 		D80B37F3242C1D7F0034660C /* ChooseDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B37F2242C1D7F0034660C /* ChooseDateTableViewCell.swift */; };
+		D815E701242C88F100958B0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D815E700242C88F100958B0C /* LoginViewController.swift */; };
 		D8EDC40C2429796E00043589 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EDC40B2429796E00043589 /* AppDelegate.swift */; };
 		D8EDC40E2429796E00043589 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EDC40D2429796E00043589 /* SceneDelegate.swift */; };
 		D8EDC4132429796E00043589 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8EDC4112429796E00043589 /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 		32BF1FD2242C570A0021B918 /* CreatePartyTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePartyTypeViewController.swift; sourceTree = "<group>"; };
 		D80B37F0242C1AFC0034660C /* MakeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDetailViewController.swift; sourceTree = "<group>"; };
 		D80B37F2242C1D7F0034660C /* ChooseDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDateTableViewCell.swift; sourceTree = "<group>"; };
+		D815E700242C88F100958B0C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D8EDC4082429796E00043589 /* frmU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = frmU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8EDC40B2429796E00043589 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8EDC40D2429796E00043589 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 		D8EDC442242AB13700043589 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D815E700242C88F100958B0C /* LoginViewController.swift */,
 				32BF1FC5242AFA6C0021B918 /* ViewController.swift */,
 				32BF1FC7242AFA8D0021B918 /* Parties */,
 				D8EDC444242AB15800043589 /* Make */,
@@ -361,6 +364,7 @@
 				D80B37F3242C1D7F0034660C /* ChooseDateTableViewCell.swift in Sources */,
 				328E25FB242C75CA0017464F /* EventsJoinedTableViewCell.swift in Sources */,
 				D8EDC40E2429796E00043589 /* SceneDelegate.swift in Sources */,
+				D815E701242C88F100958B0C /* LoginViewController.swift in Sources */,
 				D80B37F1242C1AFC0034660C /* MakeDetailViewController.swift in Sources */,
 				D8EDC4162429796E00043589 /* frmU.xcdatamodeld in Sources */,
 				D8EDC449242ACAB300043589 /* User.swift in Sources */,
