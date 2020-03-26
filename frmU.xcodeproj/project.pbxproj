@@ -11,6 +11,8 @@
 		32BF1FCB242AFD3E0021B918 /* TypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FCA242AFD3E0021B918 /* TypeCollectionViewCell.swift */; };
 		32BF1FCD242B05070021B918 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FCC242B05070021B918 /* PostTableViewCell.swift */; };
 		32BF1FCF242B08C40021B918 /* PartyTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FCE242B08C40021B918 /* PartyTimeCollectionViewCell.swift */; };
+		D80B37F1242C1AFC0034660C /* MakeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B37F0242C1AFC0034660C /* MakeDetailViewController.swift */; };
+		D80B37F3242C1D7F0034660C /* ChooseDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B37F2242C1D7F0034660C /* ChooseDateTableViewCell.swift */; };
 		D8EDC40C2429796E00043589 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EDC40B2429796E00043589 /* AppDelegate.swift */; };
 		D8EDC40E2429796E00043589 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EDC40D2429796E00043589 /* SceneDelegate.swift */; };
 		D8EDC4132429796E00043589 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8EDC4112429796E00043589 /* Main.storyboard */; };
@@ -46,6 +48,8 @@
 		32BF1FCA242AFD3E0021B918 /* TypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		32BF1FCC242B05070021B918 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		32BF1FCE242B08C40021B918 /* PartyTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyTimeCollectionViewCell.swift; sourceTree = "<group>"; };
+		D80B37F0242C1AFC0034660C /* MakeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDetailViewController.swift; sourceTree = "<group>"; };
+		D80B37F2242C1D7F0034660C /* ChooseDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDateTableViewCell.swift; sourceTree = "<group>"; };
 		D8EDC4082429796E00043589 /* frmU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = frmU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8EDC40B2429796E00043589 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8EDC40D2429796E00043589 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 		D8EDC444242AB15800043589 /* Make */ = {
 			isa = PBXGroup;
 			children = (
+				D80B37F0242C1AFC0034660C /* MakeDetailViewController.swift */,
+				D80B37F2242C1D7F0034660C /* ChooseDateTableViewCell.swift */,
 			);
 			path = Make;
 			sourceTree = "<group>";
@@ -333,7 +339,9 @@
 				32BF1FC9242AFAD40021B918 /* VirtualPartyViewController.swift in Sources */,
 				32BF1FCD242B05070021B918 /* PostTableViewCell.swift in Sources */,
 				32BF1FCB242AFD3E0021B918 /* TypeCollectionViewCell.swift in Sources */,
+				D80B37F3242C1D7F0034660C /* ChooseDateTableViewCell.swift in Sources */,
 				D8EDC40E2429796E00043589 /* SceneDelegate.swift in Sources */,
+				D80B37F1242C1AFC0034660C /* MakeDetailViewController.swift in Sources */,
 				D8EDC4162429796E00043589 /* frmU.xcdatamodeld in Sources */,
 				D8EDC449242ACAB300043589 /* User.swift in Sources */,
 			);

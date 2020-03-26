@@ -9,13 +9,12 @@
 import UIKit
 
 class VirtualPartyViewController: UIViewController,  UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
-    
     var type: String = "CS170"
     
-    var vP: virtualParties = virtualParties()
+    var vP = virtualParties()
     
     // testing
-    let types = ["CS170", "Berkeley", "Unit1"]
+    let types = ["CS170", "Berkeley", "Unit1", "TOPPA", "DSC"]
     let posts = [alanPost, gracePost, lucyPost]
     let users = [Grace, Alan]
     
@@ -52,8 +51,8 @@ class VirtualPartyViewController: UIViewController,  UICollectionViewDelegate, U
             cell.typeLabel.text = types[index]
              cell.typeBackground.layer.cornerRadius = cell.typeBackground.frame.width / 2
                        cell.typeBackground.layer.borderWidth = 3
-                       cell.typeBackground.layer.masksToBounds = true
-            cell.typeBackground.backgroundColor = .yellow
+                       cell.typeBackground.layer.masksToBounds = false
+            cell.typeBackground.backgroundColor = .cyan
             return cell
         }
         return UICollectionViewCell()
@@ -65,16 +64,12 @@ class VirtualPartyViewController: UIViewController,  UICollectionViewDelegate, U
         postTableView.reloadData()
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 220
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return vP.allPosts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let index = indexPath.item
+        let index = indexPath.row
         let postDisplaying = vP.allPosts[index]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as? PostTableViewCell {
             cell.partyName.text = postDisplaying.title

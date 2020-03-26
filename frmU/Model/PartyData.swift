@@ -50,9 +50,12 @@ var Alan = User(username: "alan", profilePic: UIImage(named: "alan"), uid: "12AB
 
 //construct fake user Grace fro testing.
 
+//global variable for this User.
+var globalUser = Alan
+
 class virtualParties {
     var currentUser: User!
-    var allPosts: [Post] = []
+    var allPosts: [Post] = [alanPost, gracePost, lucyPost]
 
     
     init() {
