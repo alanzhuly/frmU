@@ -14,7 +14,7 @@ class VirtualPartyViewController: UIViewController,  UICollectionViewDelegate, U
     var vP = virtualParties()
     
     // testing
-    let types = ["CS170", "Berkeley", "Unit1", "TOPPA", "DSC"]
+    let types = ["CS170", "Berkeley", "Unit1", "TOPPA", "DSC", "Stats", "CS61B"]
     let posts = [alanPost, gracePost, lucyPost]
     let users = [Grace, Alan]
     
@@ -42,7 +42,7 @@ class VirtualPartyViewController: UIViewController,  UICollectionViewDelegate, U
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return types.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -77,6 +77,7 @@ class VirtualPartyViewController: UIViewController,  UICollectionViewDelegate, U
             cell.hostName.text = postDisplaying.user
             cell.postImage.image = postDisplaying.image
             cell.descriptionLabel.text = postDisplaying.description
+            cell.locationLabel.text = postDisplaying.location
             return cell
 
         } else {

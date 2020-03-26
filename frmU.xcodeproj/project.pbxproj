@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		328E25F7242C72180017464F /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328E25F6242C72180017464F /* ProfilePageViewController.swift */; };
+		328E25F9242C75BF0017464F /* EventsHostedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328E25F8242C75BF0017464F /* EventsHostedTableViewCell.swift */; };
+		328E25FB242C75CA0017464F /* EventsJoinedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328E25FA242C75CA0017464F /* EventsJoinedTableViewCell.swift */; };
 		32BF1FC9242AFAD40021B918 /* VirtualPartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FC8242AFAD40021B918 /* VirtualPartyViewController.swift */; };
 		32BF1FCB242AFD3E0021B918 /* TypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FCA242AFD3E0021B918 /* TypeCollectionViewCell.swift */; };
 		32BF1FCD242B05070021B918 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FCC242B05070021B918 /* PostTableViewCell.swift */; };
 		32BF1FCF242B08C40021B918 /* PartyTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FCE242B08C40021B918 /* PartyTimeCollectionViewCell.swift */; };
+		32BF1FD1242C55F20021B918 /* PartyTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FD0242C55F20021B918 /* PartyTypeCollectionViewCell.swift */; };
+		32BF1FD3242C570A0021B918 /* CreatePartyTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FD2242C570A0021B918 /* CreatePartyTypeViewController.swift */; };
 		D80B37F1242C1AFC0034660C /* MakeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B37F0242C1AFC0034660C /* MakeDetailViewController.swift */; };
 		D80B37F3242C1D7F0034660C /* ChooseDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B37F2242C1D7F0034660C /* ChooseDateTableViewCell.swift */; };
 		D8EDC40C2429796E00043589 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EDC40B2429796E00043589 /* AppDelegate.swift */; };
@@ -43,11 +48,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		328E25F6242C72180017464F /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePageViewController.swift; path = frmU/ViewControllers/Make/ProfilePageViewController.swift; sourceTree = SOURCE_ROOT; };
+		328E25F8242C75BF0017464F /* EventsHostedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsHostedTableViewCell.swift; sourceTree = "<group>"; };
+		328E25FA242C75CA0017464F /* EventsJoinedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsJoinedTableViewCell.swift; sourceTree = "<group>"; };
 		32BF1FC5242AFA6C0021B918 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = frmU/ViewControllers/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		32BF1FC8242AFAD40021B918 /* VirtualPartyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualPartyViewController.swift; sourceTree = "<group>"; };
 		32BF1FCA242AFD3E0021B918 /* TypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		32BF1FCC242B05070021B918 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		32BF1FCE242B08C40021B918 /* PartyTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyTimeCollectionViewCell.swift; sourceTree = "<group>"; };
+		32BF1FD0242C55F20021B918 /* PartyTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyTypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		32BF1FD2242C570A0021B918 /* CreatePartyTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePartyTypeViewController.swift; sourceTree = "<group>"; };
 		D80B37F0242C1AFC0034660C /* MakeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDetailViewController.swift; sourceTree = "<group>"; };
 		D80B37F2242C1D7F0034660C /* ChooseDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDateTableViewCell.swift; sourceTree = "<group>"; };
 		D8EDC4082429796E00043589 /* frmU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = frmU.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,7 +180,10 @@
 				D8EDC4192429797200043589 /* LaunchScreen.storyboard */,
 				32BF1FCA242AFD3E0021B918 /* TypeCollectionViewCell.swift */,
 				32BF1FCC242B05070021B918 /* PostTableViewCell.swift */,
+				328E25F8242C75BF0017464F /* EventsHostedTableViewCell.swift */,
+				328E25FA242C75CA0017464F /* EventsJoinedTableViewCell.swift */,
 				32BF1FCE242B08C40021B918 /* PartyTimeCollectionViewCell.swift */,
+				32BF1FD0242C55F20021B918 /* PartyTypeCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,6 +204,7 @@
 			children = (
 				D80B37F0242C1AFC0034660C /* MakeDetailViewController.swift */,
 				D80B37F2242C1D7F0034660C /* ChooseDateTableViewCell.swift */,
+				32BF1FD2242C570A0021B918 /* CreatePartyTypeViewController.swift */,
 			);
 			path = Make;
 			sourceTree = "<group>";
@@ -198,6 +212,7 @@
 		D8EDC445242AB15D00043589 /* You */ = {
 			isa = PBXGroup;
 			children = (
+				328E25F6242C72180017464F /* ProfilePageViewController.swift */,
 			);
 			path = You;
 			sourceTree = "<group>";
@@ -333,13 +348,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				328E25F9242C75BF0017464F /* EventsHostedTableViewCell.swift in Sources */,
 				D8EDC447242AB1F600043589 /* PartyData.swift in Sources */,
+				32BF1FD3242C570A0021B918 /* CreatePartyTypeViewController.swift in Sources */,
 				D8EDC40C2429796E00043589 /* AppDelegate.swift in Sources */,
 				32BF1FCF242B08C40021B918 /* PartyTimeCollectionViewCell.swift in Sources */,
+				32BF1FD1242C55F20021B918 /* PartyTypeCollectionViewCell.swift in Sources */,
+				328E25F7242C72180017464F /* ProfilePageViewController.swift in Sources */,
 				32BF1FC9242AFAD40021B918 /* VirtualPartyViewController.swift in Sources */,
 				32BF1FCD242B05070021B918 /* PostTableViewCell.swift in Sources */,
 				32BF1FCB242AFD3E0021B918 /* TypeCollectionViewCell.swift in Sources */,
 				D80B37F3242C1D7F0034660C /* ChooseDateTableViewCell.swift in Sources */,
+				328E25FB242C75CA0017464F /* EventsJoinedTableViewCell.swift in Sources */,
 				D8EDC40E2429796E00043589 /* SceneDelegate.swift in Sources */,
 				D80B37F1242C1AFC0034660C /* MakeDetailViewController.swift in Sources */,
 				D8EDC4162429796E00043589 /* frmU.xcdatamodeld in Sources */,
@@ -517,13 +537,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 264SM8X3ZK;
+				DEVELOPMENT_TEAM = DJZZG8UP4G;
 				INFOPLIST_FILE = frmU/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = berkeley.frmU;
+				PRODUCT_BUNDLE_IDENTIFIER = berkeley.frmU.toppa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -535,13 +555,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 264SM8X3ZK;
+				DEVELOPMENT_TEAM = DJZZG8UP4G;
 				INFOPLIST_FILE = frmU/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = berkeley.frmU;
+				PRODUCT_BUNDLE_IDENTIFIER = berkeley.frmU.toppa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

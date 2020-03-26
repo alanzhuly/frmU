@@ -20,7 +20,7 @@ struct Post {
     var location: String
     // List of Data objects in the collection view
     //* If Data pass current Date, delete the event. (new page)
-    var date: [Date]
+    var date: [String]
     //image the user uploaded, else default type.
     var image: UIImage?
     //username: Get from User.username
@@ -35,10 +35,10 @@ struct Post {
 
 
 //construct fake user Alan for testing.
-let alanPost = Post(type: "CS170", title: "CS170 HW Party" , location: "Zoom", date: [Date()], image: UIImage(named: "hw"), user: "alan", userImage: UIImage(named: "alan"), description: "cs170 MT study yes")
+let alanPost = Post(type: "CS170", title: "CS170 HW Party" , location: "Zoom", date: ["4/3 4pm", "3/3 5am", "4/26 7pm", "3/23 3pm"], image: UIImage(named: "hw"), user: "alan", userImage: UIImage(named: "alan"), description: "cs170 MT study yes")
 
-let lucyPost = Post(type: "Berkeley", title: "movie Party" , location: "Google Hangout", date: [Date()], image: UIImage(named: "movies"), user: "lucy", userImage: UIImage(named: "lucy"), description: "ZOOM Cinema")
-let gracePost = Post(type: "Unit1", title: "game night" , location: "Google Hangout", date: [Date()], image: UIImage(named: "game"), user: "grace", userImage: UIImage(named: "grace"), description: "lets have fun gaming")
+let lucyPost = Post(type: "Berkeley", title: "movie Party" , location: "Google Hangout", date: ["2/3 4pm", "2/3 5am", "2/26 7pm", "2/23 3pm"], image: UIImage(named: "movies"), user: "lucy", userImage: UIImage(named: "lucy"), description: "ZOOM Cinema")
+let gracePost = Post(type: "Unit1", title: "game night" , location: "Google Hangout", date: ["3/22 8pm", "3/23 9am", "3/26 4pm"], image: UIImage(named: "game"), user: "grace", userImage: UIImage(named: "grace"), description: "lets have fun gaming")
 
 
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MakeDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MakeDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
     var refresher: UIRefreshControl!
     
@@ -16,7 +16,7 @@ class MakeDetailViewController: UIViewController, UITableViewDataSource, UITable
     
     //send type and image from segue
     var type = ""
-    var image = UIImage()
+    var image: UIImage?
     
     var myTitle = "default"
     var location = ""
@@ -29,6 +29,21 @@ class MakeDetailViewController: UIViewController, UITableViewDataSource, UITable
     var myDescription = ""
     
     
+    @IBOutlet weak var imageLabel: UIImageView!
+    
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var titleTextField: UITextField!
+    
+    @IBOutlet weak var locationTextField: UITextField!
+    
+    
+    @IBOutlet weak var autoSendCalendarLabel: UILabel!
+    
+    @IBOutlet weak var sendRequestLabel: UILabel!
+    
+    
+    @IBOutlet weak var descriptionTextField: UITextField!
+    
     //Date TextField
     @IBOutlet weak var dateTextField: UITextField!
     private var datePicker: UIDatePicker?
@@ -37,6 +52,14 @@ class MakeDetailViewController: UIViewController, UITableViewDataSource, UITable
     
     
     override func viewDidLoad() {
+        imageLabel.image = self.image
+        typeLabel.text = self.type
+        titleTextField.delegate = self
+        locationTextField.delegate = self
+        descriptionTextField.delegate = self
+        
+        
+        
         super.viewDidLoad()
         dateTableView.dataSource = self
         dateTableView.delegate = self
@@ -95,14 +118,20 @@ class MakeDetailViewController: UIViewController, UITableViewDataSource, UITable
         }
         return UITableViewCell()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+           textField.resignFirstResponder()
+           return true
     }
-    */
+    
+    private func configureTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target:self, action: #selector(MakeDetailViewController.handleTap))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func handleTap() {
+        view.endEditing(true)
+    }
 
 }

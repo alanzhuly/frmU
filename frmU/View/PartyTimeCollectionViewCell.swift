@@ -11,4 +11,7 @@ import UIKit
 class PartyTimeCollectionViewCell: UICollectionViewCell {
    
     @IBOutlet weak var partyTimeLabel: UILabel!
+    
+    @IBOutlet weak var timeBackground: UIView!
+    
 }
