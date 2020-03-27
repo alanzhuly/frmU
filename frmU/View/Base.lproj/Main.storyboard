@@ -284,6 +284,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="joinButtonPressed:" destination="8By-XB-kT8" eventType="touchUpInside" id="ZNQ-b4-bW5"/>
+                                                        <segue destination="yKk-ZJ-esS" kind="presentation" id="TF0-6b-SGI"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -355,11 +356,11 @@
             <objects>
                 <viewController id="yKk-ZJ-esS" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LTq-QB-mnt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6ov-z1-HJu">
-                                <rect key="frame" x="5" y="94" width="404" height="300"/>
+                                <rect key="frame" x="5" y="50" width="404" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="rHk-If-CqW"/>
@@ -413,13 +414,13 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which time do you prefer?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuZ-Xu-ciE">
-                                <rect key="frame" x="5" y="49" width="404" height="40"/>
+                                <rect key="frame" x="5" y="5" width="404" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="E0t-IR-quC">
-                                <rect key="frame" x="50" y="474" width="150" height="41"/>
+                                <rect key="frame" x="50" y="430" width="150" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="R1K-4e-o10"/>
                                     <constraint firstAttribute="height" constant="40" id="rzM-Oe-OJL"/>
@@ -430,7 +431,7 @@
                                 </segments>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZY-vw-64y">
-                                <rect key="frame" x="236" y="464" width="128" height="61"/>
+                                <rect key="frame" x="236" y="420" width="128" height="61"/>
                                 <string key="text">Send me 
 Google Calendar
  invite</string>
@@ -439,7 +440,7 @@ Google Calendar
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeK-xz-xOK">
-                                <rect key="frame" x="214" y="682" width="150" height="80"/>
+                                <rect key="frame" x="214" y="628" width="150" height="80"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="jJS-fH-Acv"/>
@@ -449,6 +450,9 @@ Google Calendar
                                 <state key="normal" title="Enter Chat ➡️">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="DT5-xT-8aY" kind="presentation" id="ilM-xj-kB6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -474,6 +478,21 @@ Google Calendar
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BiU-wr-zMb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4562.3188405797109" y="-403.125"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="aiZ-Kt-xjY">
+            <objects>
+                <viewController id="DT5-xT-8aY" customClass="ChatViewController" customModule="frmU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ITF-WW-tky">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="3VF-Ai-ZQy"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6l2-U7-yQo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5329" y="-398"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="YXz-sb-9lh">
