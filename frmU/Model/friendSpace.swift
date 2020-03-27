@@ -23,7 +23,7 @@ class friendSpace {
     //image of this friendSpace
     var image: UIImage?
 
-    init(uid: String, name: String, people: [String], posts: [Post], image: UIImage?) {
+    init(uid: String, name: String, people: [String], image: UIImage?) {
         self.uid = uid
         self.image = image
         self.name = name
@@ -41,7 +41,14 @@ class friendSpace {
     func getPosts () {
         //if in "Your Friends", iterate through each People's "Your Friends Space" and get their posts.
         //else, iterate through each People's typeToHostedPosts, and check for the type if it is there getPost.
-        
+        if name == "Your Friends" {
+            for eachUID in people {
+                //fetch the user with eachUID
+                //get their USER object
+                //get Post information that has the type of eachUID.
+                //append to posts.
+            }
+        }
         
     }
     

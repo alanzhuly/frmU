@@ -31,6 +31,8 @@ class User {
     
     var postsJoined: [Post]
     
+    var myFriendSpace: [friendSpace]
+    
     init(username: String, profilePic: UIImage?, uid: String, friends: [String], typeToPosts: [String : [Post]], postsHosted: [Post], postsJoined: [Post]) {
         self.username = username
         self.profilePic = profilePic
@@ -39,6 +41,7 @@ class User {
         self.typeToHostedPosts = typeToPosts
         self.postsHosted = postsHosted
         self.postsJoined = postsJoined
+        self.myFriendSpace = [friendSpace(uid: self.uid, name: self.username, people: self.friends, image: self.profilePic)]
     }
     
     func changeUsername(newName : String) {
@@ -77,5 +80,17 @@ class User {
             }
         }
         return posts
+    }
+    
+    //Create User if not created in the table.
+    //Get user from the user table if the user is in the table.
+    func getUser() {
+        
+    }
+    
+    //update user's information to the hashtable
+    //access
+    func updateUser() {
+        
     }
 }
