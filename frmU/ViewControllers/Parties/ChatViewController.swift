@@ -215,7 +215,17 @@ extension ChatViewController: MessagesDataSource {
         return messages.count
     }
     
-    
+    func cellTopLabelAttributedText(for message: MessageType,
+      at indexPath: IndexPath) -> NSAttributedString? {
+        let name = message.sender.displayName
+        return NSAttributedString(
+        string: name,
+        attributes: [
+          .font: UIFont.preferredFont(forTextStyle: .caption1),
+          .foregroundColor: UIColor(white: 0.3, alpha: 1)
+        ]
+      )
+    }
 }
 
 extension ChatViewController: InputBarAccessoryViewDelegate {
