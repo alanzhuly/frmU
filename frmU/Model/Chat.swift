@@ -2,7 +2,7 @@
 //  Chat.swift
 //  frmU
 //
-//  Created by Jerry on 3/26/20.
+//  Created by Lingyue Zhu and Jerry on 3/26/20.
 //  Copyright © 2020 FRM. All rights reserved.
 //
 

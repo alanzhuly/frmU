@@ -55,6 +55,11 @@ var Alan = User(username: "alan", profilePic: UIImage(named: "Alan"), uid: "12AB
 var signedIn = false
 var globalUser = Alan
 
+//for getUser in User class
+//store uid and username to check if the user is already there
+var globalUID = ""
+var globalUSERNAME = ""
+
 class virtualParties {
     var allPosts: [Post] = [alanPost, gracePost, lucyPost]
 

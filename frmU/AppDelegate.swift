@@ -41,7 +41,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             return
           }
           // Perform any operations on signed in user here.
-            globalUser.uid = user.userID                  // For client-side use only!
+            globalUser.uid = user.userID
+        globalUID = user.userID
+        globalUSERNAME = user.profile.name
+        // For client-side use only!
           let idToken = user.authentication.idToken // Safe to send to the server
             globalUser.username = user.profile.name
           let email = user.profile.email

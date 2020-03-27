@@ -8,6 +8,9 @@
 
 import Foundation
 import UIKit
+import Firebase
+import FirebaseFirestore
+
 
 class User {
     //Get username from Google account Name?
@@ -80,12 +83,6 @@ class User {
             }
         }
         return posts
-    }
-    
-    //Create User if not created in the table.
-    //Get user from the user table if the user is in the table.
-    func getUser() {
-        
     }
     
     //update user's information to the hashtable
