@@ -26,6 +26,7 @@
 		D80B37F1242C1AFC0034660C /* MakeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B37F0242C1AFC0034660C /* MakeDetailViewController.swift */; };
 		D80B37F3242C1D7F0034660C /* ChooseDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B37F2242C1D7F0034660C /* ChooseDateTableViewCell.swift */; };
 		D815E701242C88F100958B0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D815E700242C88F100958B0C /* LoginViewController.swift */; };
+		D815E707242D924C00958B0C /* friendSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = D815E706242D924C00958B0C /* friendSpace.swift */; };
 		D8EDC40C2429796E00043589 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EDC40B2429796E00043589 /* AppDelegate.swift */; };
 		D8EDC40E2429796E00043589 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EDC40D2429796E00043589 /* SceneDelegate.swift */; };
 		D8EDC4132429796E00043589 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8EDC4112429796E00043589 /* Main.storyboard */; };
@@ -82,6 +83,7 @@
 		D80B37F0242C1AFC0034660C /* MakeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDetailViewController.swift; sourceTree = "<group>"; };
 		D80B37F2242C1D7F0034660C /* ChooseDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDateTableViewCell.swift; sourceTree = "<group>"; };
 		D815E700242C88F100958B0C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D815E706242D924C00958B0C /* friendSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendSpace.swift; sourceTree = "<group>"; };
 		D8EDC4082429796E00043589 /* frmU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = frmU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8EDC40B2429796E00043589 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8EDC40D2429796E00043589 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				C497F1E8242D5F6300AC2F2B /* Chat.swift */,
 				D8EDC446242AB1F600043589 /* PartyData.swift */,
 				D8EDC448242ACAB300043589 /* User.swift */,
+				D815E706242D924C00958B0C /* friendSpace.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				32BF1FD3242C570A0021B918 /* CreatePartyTypeViewController.swift in Sources */,
 				D8EDC40C2429796E00043589 /* AppDelegate.swift in Sources */,
 				32BF1FCF242B08C40021B918 /* PartyTimeCollectionViewCell.swift in Sources */,
+				D815E707242D924C00958B0C /* friendSpace.swift in Sources */,
 				32BF1FD1242C55F20021B918 /* PartyTypeCollectionViewCell.swift in Sources */,
 				328E25F7242C72180017464F /* ProfilePageViewController.swift in Sources */,
 				32BF1FC9242AFAD40021B918 /* VirtualPartyViewController.swift in Sources */,

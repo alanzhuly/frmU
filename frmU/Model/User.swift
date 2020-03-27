@@ -22,7 +22,9 @@ class User {
     //friends be list of uids.
     var friends: [String]
     
-    // Map post categories to corresponding hosted posts
+    // Map post categories to corresponding hosted posts.
+    // If the post
+    // Store posts here.
     var typeToHostedPosts: [String : [Post]]
     
     var postsHosted: [Post]

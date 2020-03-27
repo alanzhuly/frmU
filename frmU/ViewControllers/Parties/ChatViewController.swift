@@ -237,7 +237,10 @@ extension ChatViewController: MessagesDataSource {
         )
     }
     func cellTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
-        let time = message.sentDate.description(with: .autoupdatingCurrent)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy HH:mm"
+        dateFormatter.timeZone = NSTimeZone(name: "Pacific Daylight Time") as TimeZone?
+        let time = dateFormatter.string(from: message.sentDate)
         return NSAttributedString(
             string: time,
             attributes: [

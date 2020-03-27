@@ -920,47 +920,23 @@ Google Calendar
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pka-7N-m9U">
-                                <rect key="frame" x="20" y="108" width="200" height="150"/>
+                                <rect key="frame" x="144.5" y="108" width="125" height="125"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="XSg-JP-Gm0"/>
-                                    <constraint firstAttribute="height" constant="150" id="x2U-tI-Ji6"/>
+                                    <constraint firstAttribute="height" constant="125" id="ffa-8A-4Ab"/>
+                                    <constraint firstAttribute="width" constant="125" id="gsZ-8E-CZ0"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TR5-rZ-U8p">
-                                <rect key="frame" x="240" y="128" width="154" height="50"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="OTs-dm-fAH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Add Friends"/>
-                                <connections>
-                                    <action selector="addFriendsButtonPressed:" destination="Uyg-0k-guB" eventType="touchUpInside" id="DDv-c1-RJ1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUb-E5-ncn">
-                                <rect key="frame" x="240" y="198" width="154" height="50"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="S8t-Oy-kcn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="My Friends"/>
-                                <connections>
-                                    <action selector="myFriendsButtonPressed:" destination="Uyg-0k-guB" eventType="touchUpInside" id="sH1-wC-G9q"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events Hosted" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rK-rd-tAm">
-                                <rect key="frame" x="20" y="288" width="374" height="30"/>
+                                <rect key="frame" x="20" y="283" width="374" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="o99-eJ-tE3"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2IT-Xl-tWl">
-                                <rect key="frame" x="20" y="328" width="374" height="200"/>
+                                <rect key="frame" x="20" y="323" width="374" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="Xzx-ee-d6j"/>
@@ -1026,11 +1002,11 @@ Google Calendar
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events Joined" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56P-Qu-ehZ">
-                                <rect key="frame" x="20" y="548" width="374" height="30"/>
+                                <rect key="frame" x="20" y="543" width="374" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="zZ1-bo-Vtn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1085,29 +1061,60 @@ Google Calendar
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1FF-uu-C7Q">
+                                <rect key="frame" x="138" y="241" width="131" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="fu2-2W-GMf"/>
+                                    <constraint firstAttribute="width" constant="131" id="zLS-dK-0cW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMw-qA-BVw">
+                                <rect key="frame" x="20" y="108" width="99.5" height="30"/>
+                                <color key="backgroundColor" red="0.8901597261428833" green="0.94593054056167603" blue="0.2963874340057373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mGY-cA-bBy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Friend Space"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dG1-bz-xAv">
+                                <rect key="frame" x="294.5" y="108" width="99.5" height="30"/>
+                                <color key="backgroundColor" red="0.8901597261428833" green="0.94593054056167603" blue="0.2963874340057373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="VGM-z6-fD9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="My Friends"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="zUb-E5-ncn" firstAttribute="leading" secondItem="Pka-7N-m9U" secondAttribute="trailing" constant="20" id="43P-Da-Ssr"/>
                             <constraint firstItem="XSa-vD-Ppx" firstAttribute="leading" secondItem="xrm-SP-b7H" secondAttribute="leading" constant="20" id="7GR-es-EMB"/>
                             <constraint firstItem="9rK-rd-tAm" firstAttribute="leading" secondItem="bix-yR-QgE" secondAttribute="leading" constant="20" id="ADu-Fy-FZS"/>
-                            <constraint firstItem="bix-yR-QgE" firstAttribute="trailing" secondItem="TR5-rZ-U8p" secondAttribute="trailing" constant="20" id="Alw-ag-LkZ"/>
-                            <constraint firstItem="TR5-rZ-U8p" firstAttribute="leading" secondItem="Pka-7N-m9U" secondAttribute="trailing" constant="20" id="Coh-yp-VKI"/>
+                            <constraint firstItem="dG1-bz-xAv" firstAttribute="top" secondItem="bix-yR-QgE" secondAttribute="top" constant="20" id="Dd0-4f-Pne"/>
                             <constraint firstItem="56P-Qu-ehZ" firstAttribute="leading" secondItem="bix-yR-QgE" secondAttribute="leading" constant="20" id="Di7-qy-7qg"/>
+                            <constraint firstItem="Pka-7N-m9U" firstAttribute="leading" secondItem="HMw-qA-BVw" secondAttribute="trailing" constant="25" id="Jff-fO-sB7"/>
                             <constraint firstItem="56P-Qu-ehZ" firstAttribute="top" secondItem="2IT-Xl-tWl" secondAttribute="bottom" constant="20" id="K0v-qU-RTe"/>
-                            <constraint firstItem="Pka-7N-m9U" firstAttribute="leading" secondItem="bix-yR-QgE" secondAttribute="leading" constant="20" id="PwY-kj-vxt"/>
+                            <constraint firstItem="HMw-qA-BVw" firstAttribute="top" secondItem="bix-yR-QgE" secondAttribute="top" constant="20" id="O8G-em-3DU"/>
                             <constraint firstItem="bix-yR-QgE" firstAttribute="trailing" secondItem="XSa-vD-Ppx" secondAttribute="trailing" constant="20" id="QGV-wv-1bT"/>
+                            <constraint firstItem="1FF-uu-C7Q" firstAttribute="top" secondItem="Pka-7N-m9U" secondAttribute="bottom" constant="5" id="UBx-Kx-D2w"/>
+                            <constraint firstItem="9rK-rd-tAm" firstAttribute="top" secondItem="dG1-bz-xAv" secondAttribute="bottom" constant="145" id="UXJ-X1-XVc"/>
                             <constraint firstItem="bix-yR-QgE" firstAttribute="bottom" secondItem="XSa-vD-Ppx" secondAttribute="bottom" constant="20" id="Ufm-e9-Vu6"/>
-                            <constraint firstItem="zUb-E5-ncn" firstAttribute="top" secondItem="TR5-rZ-U8p" secondAttribute="bottom" constant="20" id="Y0i-U8-BgR"/>
-                            <constraint firstAttribute="trailing" secondItem="zUb-E5-ncn" secondAttribute="trailing" constant="20" id="bQQ-sS-zbx"/>
+                            <constraint firstItem="Pka-7N-m9U" firstAttribute="centerX" secondItem="bix-yR-QgE" secondAttribute="centerX" id="aCF-ZF-o0Q"/>
                             <constraint firstItem="bix-yR-QgE" firstAttribute="trailing" secondItem="9rK-rd-tAm" secondAttribute="trailing" constant="20" id="eRZ-iN-4kI"/>
+                            <constraint firstItem="bix-yR-QgE" firstAttribute="trailing" secondItem="dG1-bz-xAv" secondAttribute="trailing" constant="20" id="eVW-vk-Kpl"/>
                             <constraint firstItem="2IT-Xl-tWl" firstAttribute="leading" secondItem="bix-yR-QgE" secondAttribute="leading" constant="20" id="ecw-id-Q15"/>
-                            <constraint firstItem="TR5-rZ-U8p" firstAttribute="top" secondItem="bix-yR-QgE" secondAttribute="top" constant="40" id="h91-PH-lqL"/>
                             <constraint firstItem="bix-yR-QgE" firstAttribute="trailing" secondItem="56P-Qu-ehZ" secondAttribute="trailing" constant="20" id="lpe-KM-d0u"/>
+                            <constraint firstItem="Pka-7N-m9U" firstAttribute="top" secondItem="bix-yR-QgE" secondAttribute="top" constant="20" id="lse-wt-ZFS"/>
+                            <constraint firstItem="1FF-uu-C7Q" firstAttribute="centerX" secondItem="bix-yR-QgE" secondAttribute="centerX" id="rLe-8i-Cc8"/>
                             <constraint firstItem="2IT-Xl-tWl" firstAttribute="top" secondItem="9rK-rd-tAm" secondAttribute="bottom" constant="10" id="sH7-HS-i4V"/>
+                            <constraint firstItem="HMw-qA-BVw" firstAttribute="leading" secondItem="bix-yR-QgE" secondAttribute="leading" constant="20" id="tW8-EN-KuU"/>
                             <constraint firstItem="bix-yR-QgE" firstAttribute="trailing" secondItem="2IT-Xl-tWl" secondAttribute="trailing" constant="20" id="tmm-ba-k06"/>
-                            <constraint firstItem="9rK-rd-tAm" firstAttribute="top" secondItem="Pka-7N-m9U" secondAttribute="bottom" constant="30" id="z1y-32-Kpn"/>
-                            <constraint firstItem="Pka-7N-m9U" firstAttribute="top" secondItem="bix-yR-QgE" secondAttribute="top" constant="20" id="zz5-8a-sV8"/>
+                            <constraint firstItem="9rK-rd-tAm" firstAttribute="top" secondItem="HMw-qA-BVw" secondAttribute="bottom" constant="145" id="xXD-gf-ex8"/>
+                            <constraint firstItem="dG1-bz-xAv" firstAttribute="leading" secondItem="Pka-7N-m9U" secondAttribute="trailing" constant="25" id="zNd-UD-dU6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bix-yR-QgE"/>
                     </view>
@@ -1130,6 +1137,7 @@ Google Calendar
                     <connections>
                         <outlet property="eventsHostedTableView" destination="2IT-Xl-tWl" id="Y7v-qH-vdj"/>
                         <outlet property="eventsJoinedTableView" destination="XSa-vD-Ppx" id="Ios-iJ-FAe"/>
+                        <outlet property="myUsername" destination="1FF-uu-C7Q" id="gUc-K1-9bE"/>
                         <outlet property="profileImage" destination="Pka-7N-m9U" id="qbu-t6-fbq"/>
                     </connections>
                 </viewController>

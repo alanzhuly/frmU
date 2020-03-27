@@ -11,6 +11,7 @@ import FirebaseAuth
 import GoogleSignIn
 
 class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var myUsername: UILabel!
     
     
     // testing
@@ -40,9 +41,9 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     override func viewDidLoad() {
-        self.profileImage.image = Grace.profilePic
         super.viewDidLoad()
-
+        self.profileImage.image = globalUser.profilePic
+        myUsername.text = globalUser.username
         eventsHostedTableView.delegate = self
         eventsHostedTableView.dataSource = self
        
