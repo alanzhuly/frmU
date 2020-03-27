@@ -11,6 +11,7 @@ import FirebaseAuth
 import GoogleSignIn
 import Firebase
 import FirebaseFirestore
+import SDWebImage
 
 //for the first page.
 class LoginViewController: UIViewController{
@@ -41,6 +42,10 @@ class LoginViewController: UIViewController{
             welcome.reloadInputViews()
         } else {
             self.getUser()
+            
+            SDWebImageManager.shared.loadImage(with: globalPICURL, options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
+                globalUser.profilePic = image}
+
 //            globalUser.createNewUser()
             performSegue(withIdentifier: "logIn", sender: sender)
         }
@@ -73,10 +78,12 @@ class LoginViewController: UIViewController{
             return listOfDictionary
         }
         
-        //helper: change dictionary back to post with correct image.
-        func dic2post(dictionary: [String : [String]]) {
+        //helper: change dictionary back to post with correct image and correct Post Class.
+        //implement image and others first.
+        func reversePost2Dic(dictionary: [String : [String]]) {
             
         }
+        
     
     func convertTypeToHostedPosts (posts: [String : [Post]]) -> [String : [[String: Any]]] {
         var dictionary: [String : [[String: Any]]] = [:]

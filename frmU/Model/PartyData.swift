@@ -59,6 +59,7 @@ var globalUser = Alan
 //store uid and username to check if the user is already there
 var globalUID = ""
 var globalUSERNAME = ""
+var globalPICURL: URL?
 
 class virtualParties {
     var allPosts: [Post] = [alanPost, gracePost, lucyPost]

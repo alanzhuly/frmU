@@ -50,6 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
           let email = user.profile.email
           // ...
             signedIn = true
+        if user.profile.hasImage {
+            globalPICURL = user.profile.imageURL(withDimension: 200)
+        }
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
