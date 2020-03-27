@@ -19,10 +19,13 @@
 		33C5B176BDD34CF3F80035DB /* Pods_frmUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E927D62EEE9E6E8E72E712E /* Pods_frmUTests.framework */; };
 		8B92E0DB951939ED5ECCE5BC /* Pods_frmU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21F5CA8A5EFD20CE98DECEB /* Pods_frmU.framework */; };
 		BAEB74B095CBCE109663C9CF /* Pods_frmU_frmUUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E67DFC445BC54C759A58C5F /* Pods_frmU_frmUUITests.framework */; };
+		C497F1E7242D5F3D00AC2F2B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C497F1E6242D5F3D00AC2F2B /* Message.swift */; };
+		C497F1E9242D5F6300AC2F2B /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C497F1E8242D5F6300AC2F2B /* Chat.swift */; };
+		C497F1EB242D720E00AC2F2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C497F1EA242D720E00AC2F2B /* GoogleService-Info.plist */; };
+		C497F1ED242D7D1A00AC2F2B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C497F1EC242D7D1A00AC2F2B /* ChatViewController.swift */; };
 		D80B37F1242C1AFC0034660C /* MakeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B37F0242C1AFC0034660C /* MakeDetailViewController.swift */; };
 		D80B37F3242C1D7F0034660C /* ChooseDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B37F2242C1D7F0034660C /* ChooseDateTableViewCell.swift */; };
 		D815E701242C88F100958B0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D815E700242C88F100958B0C /* LoginViewController.swift */; };
-		D815E703242C903B00958B0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D815E702242C903B00958B0C /* GoogleService-Info.plist */; };
 		D8EDC40C2429796E00043589 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EDC40B2429796E00043589 /* AppDelegate.swift */; };
 		D8EDC40E2429796E00043589 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EDC40D2429796E00043589 /* SceneDelegate.swift */; };
 		D8EDC4132429796E00043589 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8EDC4112429796E00043589 /* Main.storyboard */; };
@@ -72,10 +75,13 @@
 		9E67DFC445BC54C759A58C5F /* Pods_frmU_frmUUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_frmU_frmUUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBC6ABC6159FA8CD9F669F4B /* Pods-frmU-frmUUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frmU-frmUUITests.debug.xcconfig"; path = "Target Support Files/Pods-frmU-frmUUITests/Pods-frmU-frmUUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C21F5CA8A5EFD20CE98DECEB /* Pods_frmU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_frmU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C497F1E6242D5F3D00AC2F2B /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		C497F1E8242D5F6300AC2F2B /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		C497F1EA242D720E00AC2F2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C497F1EC242D7D1A00AC2F2B /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		D80B37F0242C1AFC0034660C /* MakeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDetailViewController.swift; sourceTree = "<group>"; };
 		D80B37F2242C1D7F0034660C /* ChooseDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDateTableViewCell.swift; sourceTree = "<group>"; };
 		D815E700242C88F100958B0C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		D815E702242C903B00958B0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8EDC4082429796E00043589 /* frmU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = frmU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8EDC40B2429796E00043589 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8EDC40D2429796E00043589 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				32BF1FC8242AFAD40021B918 /* VirtualPartyViewController.swift */,
+				C497F1EC242D7D1A00AC2F2B /* ChatViewController.swift */,
 			);
 			path = Parties;
 			sourceTree = "<group>";
@@ -184,7 +191,7 @@
 				D8EDC441242AB0F600043589 /* View */,
 				D8EDC442242AB13700043589 /* ViewControllers */,
 				D8EDC4172429797200043589 /* Assets.xcassets */,
-				D815E702242C903B00958B0C /* GoogleService-Info.plist */,
+				C497F1EA242D720E00AC2F2B /* GoogleService-Info.plist */,
 				D8EDC41C2429797200043589 /* Info.plist */,
 				D8EDC4142429796E00043589 /* frmU.xcdatamodeld */,
 			);
@@ -212,6 +219,8 @@
 		D8EDC440242AB0E500043589 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C497F1E6242D5F3D00AC2F2B /* Message.swift */,
+				C497F1E8242D5F6300AC2F2B /* Chat.swift */,
 				D8EDC446242AB1F600043589 /* PartyData.swift */,
 				D8EDC448242ACAB300043589 /* User.swift */,
 			);
@@ -375,8 +384,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8EDC41B2429797200043589 /* LaunchScreen.storyboard in Resources */,
-				D815E703242C903B00958B0C /* GoogleService-Info.plist in Resources */,
 				D8EDC4182429797200043589 /* Assets.xcassets in Resources */,
+				C497F1EB242D720E00AC2F2B /* GoogleService-Info.plist in Resources */,
 				D8EDC4132429796E00043589 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -552,9 +561,12 @@
 				D80B37F3242C1D7F0034660C /* ChooseDateTableViewCell.swift in Sources */,
 				328E25FB242C75CA0017464F /* EventsJoinedTableViewCell.swift in Sources */,
 				D8EDC40E2429796E00043589 /* SceneDelegate.swift in Sources */,
+				C497F1E9242D5F6300AC2F2B /* Chat.swift in Sources */,
 				D815E701242C88F100958B0C /* LoginViewController.swift in Sources */,
 				D80B37F1242C1AFC0034660C /* MakeDetailViewController.swift in Sources */,
 				D8EDC4162429796E00043589 /* frmU.xcdatamodeld in Sources */,
+				C497F1E7242D5F3D00AC2F2B /* Message.swift in Sources */,
+				C497F1ED242D7D1A00AC2F2B /* ChatViewController.swift in Sources */,
 				D8EDC449242ACAB300043589 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
