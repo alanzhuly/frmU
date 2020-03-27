@@ -34,7 +34,7 @@ class ChatViewController: MessagesViewController {
         navigationItem.largeTitleDisplayMode = .never
         maintainPositionOnKeyboardFrameChanged = true
         messageInputBar.inputTextView.tintColor = .gray
-        messageInputBar.sendButton.setTitleColor(.blue, for: .normal)
+        messageInputBar.sendButton.setTitleColor(.systemGreen, for: .normal)
         
         messageInputBar.delegate = self
         messagesCollectionView.messagesDataSource = self
@@ -172,7 +172,7 @@ class ChatViewController: MessagesViewController {
 
 extension ChatViewController: MessagesDisplayDelegate {
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return isFromCurrentSender(message: message) ? .blue: .lightGray
+        return isFromCurrentSender(message: message) ? .systemGreen: .lightGray
     }
 
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
@@ -187,6 +187,11 @@ extension ChatViewController: MessagesDisplayDelegate {
            // }
         }
     }
+    
+    func shouldDisplayHeader(for message: MessageType, at indexPath: IndexPath,
+      in messagesCollectionView: MessagesCollectionView) -> Bool {
+        return true
+    }
 
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
 
@@ -199,6 +204,12 @@ extension ChatViewController: MessagesDisplayDelegate {
 extension ChatViewController: MessagesLayoutDelegate {
     func avatarSize(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGSize {
         return .zero
+    }
+    func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 25
+    }
+    func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 25
     }
 }
 
@@ -215,16 +226,25 @@ extension ChatViewController: MessagesDataSource {
         return messages.count
     }
     
-    func cellTopLabelAttributedText(for message: MessageType,
-      at indexPath: IndexPath) -> NSAttributedString? {
+    func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
         let name = message.sender.displayName
         return NSAttributedString(
-        string: name,
-        attributes: [
-          .font: UIFont.preferredFont(forTextStyle: .caption1),
-          .foregroundColor: UIColor(white: 0.3, alpha: 1)
-        ]
-      )
+            string: name,
+            attributes: [
+                .font: UIFont.preferredFont(forTextStyle: .caption1),
+                .foregroundColor: UIColor(white: 0.3, alpha: 1)
+            ]
+        )
+    }
+    func cellTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+        let time = message.sentDate.description(with: .autoupdatingCurrent)
+        return NSAttributedString(
+            string: time,
+            attributes: [
+                .font: UIFont.preferredFont(forTextStyle: .caption1),
+                .foregroundColor: UIColor(white: 0.3, alpha: 1)
+            ]
+        )
     }
 }
 
