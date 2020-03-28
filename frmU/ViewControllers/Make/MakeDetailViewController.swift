@@ -18,7 +18,7 @@ class MakeDetailViewController: UIViewController, UITableViewDataSource, UITable
     var type: friendSpace?
     var image: UIImage?
     
-    var myTitle = "default"
+    var myTitle = ""
     var location = ""
     var changeDate : Date = Date()
     
@@ -28,6 +28,7 @@ class MakeDetailViewController: UIViewController, UITableViewDataSource, UITable
     var userImage = globalUser.profilePic
     var myDescription = ""
     
+    @IBOutlet weak var checkInput: UILabel!
     
     @IBOutlet weak var imageLabel: UIImageView!
     
@@ -78,6 +79,7 @@ class MakeDetailViewController: UIViewController, UITableViewDataSource, UITable
     
     
     @IBAction func sendPostButtonPressed(_ sender: Any) {
+        print("reached here 02")
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yy HH:mm"
         dateFormatter.timeZone = NSTimeZone(name: "Pacific Daylight Time") as TimeZone?
@@ -85,24 +87,50 @@ class MakeDetailViewController: UIViewController, UITableViewDataSource, UITable
         for d in date {
             dateString.append([dateFormatter.string(from: d), "0"])
         }
-            if dateString.count == 0 {
-                //
-                return
-            }
-            if myTitle == "default" {
-                return
-            }
-            let newPost = Post(friendSpace: type!, title: myTitle, location: location, date: dateString, image: image, user: user, userImage: userImage, description: description)
-            globalUser.postsHosted.append(newPost)
-            if globalUser.typeToHostedPosts[type!.uid] == nil {
-                globalUser.typeToHostedPosts[type!.uid] = [newPost]
-            } else {
-                var l =  globalUser.typeToHostedPosts[type!.uid]!
-                l.append(newPost)
-                globalUser.typeToHostedPosts[type!.uid] = l
-            }
-            self.navigationController?.popToRootViewController(animated: true)
+        if dateString.count == 0 {
+            print(dateString)
+            return
+        }
         
+        //get title info
+        if let inputTitle = titleTextField.text {
+            myTitle = inputTitle
+        } else {
+            checkInput.text = "input title plz"
+            return
+        }
+        
+        //get location info
+        if let inputLocation = locationTextField.text {
+            location = inputLocation
+        } else {
+            checkInput.text = "input location plz"
+            return
+        }
+        //extra check
+        if myTitle == "" {
+            checkInput.text = "input title plz"
+            return
+        }
+        if location == "" {
+            checkInput.text = "input location plz"
+            return
+        }
+        if dateString == [[]] {
+            checkInput.text = "input Date plz"
+            return
+        }
+        
+        let newPost = Post(friendSpace: type!, title: myTitle, location: location, date: dateString, image: image, user: user, userImage: userImage, description: description)
+        globalUser.postsHosted.append(newPost)
+        if globalUser.typeToHostedPosts[type!.uid] == nil {
+            globalUser.typeToHostedPosts[type!.uid] = [newPost]
+        } else {
+            var l =  globalUser.typeToHostedPosts[type!.uid]!
+            l.append(newPost)
+            globalUser.typeToHostedPosts[type!.uid] = l
+        }
+        performSegue(withIdentifier: "makeSuccess", sender: sender)
        
       }
       

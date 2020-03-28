@@ -22,9 +22,10 @@ class PostTableViewCell: UITableViewCell,  UICollectionViewDelegate, UICollectio
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "timeCell", for: indexPath) as? PartyTimeCollectionViewCell {
             cell.partyTimeLabel.text = times1[index]
           cell.timeBackground.layer.cornerRadius = 10
-cell.timeBackground.layer.borderWidth = 1
+cell.timeBackground.layer.borderWidth = 0
                        cell.timeBackground.layer.masksToBounds = false
-            cell.timeBackground.backgroundColor = .yellow
+            cell.timeBackground.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+            cell.timeBackground.alpha = 50
             return cell
         }
         return UICollectionViewCell()
@@ -62,6 +63,7 @@ cell.timeBackground.layer.borderWidth = 1
         // Initialization code
         timeCollectionView.delegate = self
         timeCollectionView.dataSource = self
+        selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

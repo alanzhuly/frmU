@@ -56,10 +56,11 @@ class VirtualPartyViewController: UIViewController,  UICollectionViewDelegate, U
         } else {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "typeCell", for: indexPath) as? TypeCollectionViewCell {
                 cell.typeLabel.text = friendSpacesIn[index].name
-                 cell.typeBackground.layer.cornerRadius = cell.typeBackground.frame.width / 2
+                 cell.typeBackground.layer.cornerRadius = 25
                            cell.typeBackground.layer.borderWidth = 3
+                cell.typeBackground.layer.borderColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
                            cell.typeBackground.layer.masksToBounds = false
-                cell.typeBackground.backgroundColor = .cyan
+                cell.typeBackground.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
                 return cell
             }
         }

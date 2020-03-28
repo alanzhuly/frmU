@@ -11,13 +11,17 @@ import FirebaseAuth
 import GoogleSignIn
 import Firebase
 import FirebaseFirestore
-//import SDWebImageD
+import SDWebImage
 
 //for the first page.
 class LoginViewController: UIViewController{
     @IBOutlet weak var signInButton: GIDSignInButton!
 
     @IBOutlet weak var welcome: UILabel!
+    @IBOutlet weak var welcomeCenterConstraints: NSLayoutConstraint!
+    
+    @IBOutlet weak var partyupButton: UITextField!
+    @IBOutlet weak var partyupButtonCenterConstraints: NSLayoutConstraint!
     
     //firebase
     let db = Firestore.firestore()
@@ -43,12 +47,33 @@ class LoginViewController: UIViewController{
         } else {
             self.getUser()
 
-//            SDWebImageManager.shared.loadImage(with: globalPICURL, options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
-//                globalUser.profilePic = image}
+            SDWebImageManager.shared.loadImage(with: globalPICURL, options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
+                globalUser.profilePic = image}
 
 //            globalUser.createNewUser()
             performSegue(withIdentifier: "logIn", sender: sender)
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        partyupButtonCenterConstraints.constant = 0
+        UIView.animate(withDuration: 1) { [weak self] in
+            self?.view.layoutIfNeeded()
+        }
+        welcomeCenterConstraints.constant = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 1,
+                       options: [],
+                       animations: { [weak self] in
+                        self?.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        partyupButtonCenterConstraints.constant -= view.bounds.width
+        welcomeCenterConstraints.constant -= view.bounds.width
     }
     
        //helper:

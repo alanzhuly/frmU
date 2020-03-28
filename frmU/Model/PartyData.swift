@@ -59,7 +59,7 @@ let lucyPost = Post(friendSpace: Berkeley, title: "movie Party" , location: "Goo
 
 
 let gracePost = Post(friendSpace: Unit1, title: "game night" , location: "Google Hangout", date: [["2/3 4pm", "1"], ["2/3 5am", "3"], ["2/26 7pm", "2"], ["2/23 3pm", "5"]], image: UIImage(named: "game"), user: "grace", userImage: UIImage(named: "grace"), description: "lets have fun gaming")
-let alanPost = Post(friendSpace: CS170, title: "CS170 HW Party" , location: "Zoom", date: [["2/3 4pm", "1"], ["2/3 5am", "3"], ["2/26 7pm", "2"], ["2/23 3pm", "5"]], image: UIImage(named: "hw"), user: "alan", userImage: UIImage(named: "alan"), description: "cs170 MT study yes")
+let alanPost = Post(friendSpace: CS170, title: "CS170 HW Party" , location: "Zoom", date: [["2/3 4pm", "1"], ["2/3 5am", "3"], ["2/26 7pm", "2"], ["2/23 3pm", "5"]], image: UIImage(named: "dorm"), user: "alan", userImage: UIImage(named: "Alan"), description: "Let's finish MT2 take home exam together!")
 let pp1 = Post(friendSpace: CS170, title: "CS170 HW Party2" , location: "Zoom", date: [["2/3 4pm", "1"], ["2/3 5am", "3"], ["2/26 7pm", "2"], ["2/23 3pm", "5"]], image: UIImage(named: "hw"), user: "jerry", userImage: UIImage(named: "alan"), description: "cs170 MT study no")
 
 let pp2 = Post(friendSpace: toppa, title: "CS170 HW Party" , location: "Zoom", date:[["2/3 4pm", "1"], ["2/3 5am", "3"], ["2/26 7pm", "2"], ["2/23 3pm", "5"]], image: UIImage(named: "hw"), user: "tom", userImage: UIImage(named: "alan"), description: "cs170 MT study yes")
