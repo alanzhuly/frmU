@@ -856,6 +856,16 @@ Google Calendar
                                     <action selector="toPartyDetailsView:" destination="ucu-XT-ONo" eventType="touchUpInside" id="ACf-BV-0ge"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQI-f3-rpS">
+                                <rect key="frame" x="40" y="673" width="150" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="be9-a8-AyM"/>
+                                    <constraint firstAttribute="height" constant="100" id="pXs-bl-rLz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -864,6 +874,7 @@ Google Calendar
                             <constraint firstItem="JVE-a6-nmu" firstAttribute="top" secondItem="jcI-zb-efd" secondAttribute="bottom" constant="30" id="4eh-0y-ZGr"/>
                             <constraint firstItem="pfn-tl-mgj" firstAttribute="centerX" secondItem="PlJ-J0-DKd" secondAttribute="centerX" id="4kv-wm-ayJ"/>
                             <constraint firstItem="jRA-4z-73i" firstAttribute="trailing" secondItem="KqK-ww-tw4" secondAttribute="trailing" constant="50" id="9ER-k5-qXo"/>
+                            <constraint firstItem="fQI-f3-rpS" firstAttribute="leading" secondItem="jRA-4z-73i" secondAttribute="leading" constant="40" id="9mN-Wc-g26"/>
                             <constraint firstItem="BgY-kJ-t8S" firstAttribute="top" secondItem="pfn-tl-mgj" secondAttribute="bottom" constant="320" id="Eyf-Bi-n3W"/>
                             <constraint firstItem="jRA-4z-73i" firstAttribute="bottom" secondItem="KqK-ww-tw4" secondAttribute="bottom" constant="30" id="GW7-8c-HVw"/>
                             <constraint firstItem="PlJ-J0-DKd" firstAttribute="leading" secondItem="jRA-4z-73i" secondAttribute="leading" constant="57.5" id="Lhf-WD-E21"/>
@@ -872,6 +883,7 @@ Google Calendar
                             <constraint firstItem="PlJ-J0-DKd" firstAttribute="centerX" secondItem="kKM-Kv-KOO" secondAttribute="centerX" id="OTz-pA-FDt"/>
                             <constraint firstItem="KqK-ww-tw4" firstAttribute="top" secondItem="JVE-a6-nmu" secondAttribute="bottom" constant="50" id="T01-u8-aNw"/>
                             <constraint firstItem="jRA-4z-73i" firstAttribute="trailing" secondItem="jcI-zb-efd" secondAttribute="trailing" constant="50" id="dYI-1h-ABR"/>
+                            <constraint firstItem="jRA-4z-73i" firstAttribute="bottom" secondItem="fQI-f3-rpS" secondAttribute="bottom" constant="40" id="fOS-Cg-M7t"/>
                             <constraint firstItem="pfn-tl-mgj" firstAttribute="leading" secondItem="jRA-4z-73i" secondAttribute="leading" constant="15" id="hKW-fF-cv5"/>
                             <constraint firstItem="jRA-4z-73i" firstAttribute="trailing" secondItem="JVE-a6-nmu" secondAttribute="trailing" constant="30" id="j3e-8D-yTp"/>
                             <constraint firstItem="PTi-pM-h2M" firstAttribute="leading" secondItem="jRA-4z-73i" secondAttribute="leading" constant="20" id="j6g-50-g0W"/>
@@ -886,6 +898,7 @@ Google Calendar
                     <connections>
                         <outlet property="imageLabel" destination="jcI-zb-efd" id="5p5-yn-8dY"/>
                         <outlet property="partyTypeCollectionView" destination="pfn-tl-mgj" id="dar-jk-AYf"/>
+                        <outlet property="typeRemainderLabel" destination="fQI-f3-rpS" id="CLl-xZ-G9N"/>
                         <segue destination="fzK-QU-r2T" kind="show" identifier="createToDetails" id="tZK-jF-aKN"/>
                     </connections>
                 </viewController>
@@ -1022,6 +1035,9 @@ Google Calendar
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="➡️"/>
+                                <connections>
+                                    <action selector="sendPostButtonPressed:" destination="fzK-QU-r2T" eventType="touchUpInside" id="sga-JZ-GlN"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="V7e-kk-83U">
                                 <rect key="frame" x="86" y="318" width="242" height="30"/>

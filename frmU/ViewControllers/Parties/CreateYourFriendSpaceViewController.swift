@@ -39,6 +39,7 @@ class CreateYourFriendSpaceViewController: UIViewController, UITableViewDataSour
         if let t = self.name.text {
             newFriendSpace.name = t
             newFriendSpace.image = self.image.image
+            newFriendSpace.uid = UUID.init().uuidString
             vP.addFriendSpaces(friendSpace: newFriendSpace)
         }
         _ = navigationController?.popViewController(animated: true)

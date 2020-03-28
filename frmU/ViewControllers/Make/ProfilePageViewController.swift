@@ -13,21 +13,15 @@ import GoogleSignIn
 class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var myUsername: UILabel!
     
-    
-    // testing
-    let eventsHosted = ["CS170 HW Party", "Movie night", "Casino night", "Board game", "Virtual lunch", "Interview prep"]
-    let eventsHostedDate = ["3/23 9pm", "3/22 3pm", "3/22 5pm", "4/23 8pm", "3/23 9pm", "4/23 9pm"]
-    
-    let eventsJoined = ["Math54 HW Party", "Film night", "Casino night", "Shopping together", "Virtual dinner", "Interview prep", "Resume Critique"]
-    let eventsJoinedDate = ["3/23 9pm", "3/22 3pm", "3/22 5pm", "4/23 8pm", "3/23 9pm", "4/23 9pm", "4/23 9pm"]
-    
     @IBOutlet weak var profileImage: UIImageView!
     
     
     @IBAction func addFriendsButtonPressed(_ sender: Any) {
+        //
     }
     
     @IBAction func myFriendsButtonPressed(_ sender: Any) {
+        //
     }
     
     @IBOutlet weak var eventsHostedTableView: UITableView!
@@ -63,9 +57,9 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == eventsHostedTableView {
-            return eventsHosted.count
+            return globalUser.postsHosted.count
         } else {
-            return eventsJoined.count
+            return globalUser.postsJoined.count
         }
     }
     
@@ -75,17 +69,25 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         case eventsJoinedTableView:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "eventsJoinedCell", for: indexPath) as? EventsJoinedTableViewCell {
                  let index = indexPath.item
-                cell.partyNameLabel.text = eventsJoined[index]
-                cell.partyTimeLabel.text = eventsJoinedDate[index]
+                cell.partyNameLabel.text = globalUser.postsJoined[index].title
+                if globalUser.postsJoined[index].date.count == 1 {
+                    cell.partyTimeLabel.text = "Time: " +  globalUser.postsJoined[index].date[0][0]
+                } else {
+                    cell.partyTimeLabel.text = "Time: TBD"
+                }
                 cellToReturn = cell
                 }
             
         case eventsHostedTableView:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "eventsHostedCell", for: indexPath) as? EventsHostedTableViewCell {
                      let index = indexPath.item
-                    cell.partyNameLabel.text = eventsHosted[index]
-                    cell.partyTimeLabel.text = eventsHostedDate[index]
-                    cellToReturn = cell
+                cell.partyNameLabel.text = globalUser.postsHosted[index].title
+                if globalUser.postsHosted[index].date.count == 1 {
+                    cell.partyTimeLabel.text = "Time: " +  globalUser.postsHosted[index].date[0][0]
+                } else {
+                    cell.partyTimeLabel.text = "Time: TBD"
+                }
+                cellToReturn = cell
 
 
             }

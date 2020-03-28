@@ -16,7 +16,13 @@ class CreatePartyTypeViewController: UIViewController, UICollectionViewDelegate,
     
     var chosenPartyType:friendSpace?
     
+    @IBOutlet weak var typeRemainderLabel: UILabel!
+    
+    
     @IBOutlet weak var partyTypeCollectionView: UICollectionView!
+    
+    var chosen = false
+    
     
     // chosen party image
     @IBOutlet weak var imageLabel: UIImageView!
@@ -34,7 +40,11 @@ class CreatePartyTypeViewController: UIViewController, UICollectionViewDelegate,
     
     
     @IBAction func toPartyDetailsView(_ sender: UIButton) {
-        performSegue(withIdentifier: "createToDetails", sender: sender)
+        if (chosen) {
+             performSegue(withIdentifier: "createToDetails", sender: sender)
+        } else {
+            typeRemainderLabel.text = "Please select friend space!"
+        }
     }
     
     
@@ -66,8 +76,6 @@ class CreatePartyTypeViewController: UIViewController, UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let index = indexPath.item
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "partyTypeCell", for: indexPath) as? PartyTypeCollectionViewCell {
-            chosenPartyType = friendSpacesIn[index]
-            
             cell.partyImage.image = friendSpacesIn[index].image
             cell.typeNameLabel.text = friendSpacesIn[index].name
             cell.typeBackgroundLabel .layer.cornerRadius = cell.typeBackgroundLabel.frame.width / 2
@@ -83,7 +91,10 @@ class CreatePartyTypeViewController: UIViewController, UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
            let index = indexPath.item
         imageLabel.image = friendSpacesIn[index].image
+           chosenPartyType = friendSpacesIn[index]
+        chosen = true
        }
+    
 }
 
 // helper function to convert emoji to image

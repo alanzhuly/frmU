@@ -50,6 +50,7 @@ class MakeDetailViewController: UIViewController, UITableViewDataSource, UITable
 
     @IBOutlet weak var dateTableView: UITableView!
     
+
     
     override func viewDidLoad() {
         imageLabel.image = self.image
@@ -75,6 +76,36 @@ class MakeDetailViewController: UIViewController, UITableViewDataSource, UITable
         // Do any additional setup after loading the view.
     }
     
+    
+    @IBAction func sendPostButtonPressed(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy HH:mm"
+        dateFormatter.timeZone = NSTimeZone(name: "Pacific Daylight Time") as TimeZone?
+        var dateString: [[String]] = [[]]
+        for d in date {
+            dateString.append([dateFormatter.string(from: d), "0"])
+        }
+            if dateString.count == 0 {
+                //
+                return
+            }
+            if myTitle == "default" {
+                return
+            }
+            let newPost = Post(friendSpace: type!, title: myTitle, location: location, date: dateString, image: image, user: user, userImage: userImage, description: description)
+            globalUser.postsHosted.append(newPost)
+            if globalUser.typeToHostedPosts[type!.uid] == nil {
+                globalUser.typeToHostedPosts[type!.uid] = [newPost]
+            } else {
+                var l =  globalUser.typeToHostedPosts[type!.uid]!
+                l.append(newPost)
+                globalUser.typeToHostedPosts[type!.uid] = l
+            }
+            self.navigationController?.popToRootViewController(animated: true)
+        
+       
+      }
+      
     //objc functions for selector above
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
         view.endEditing(true)
