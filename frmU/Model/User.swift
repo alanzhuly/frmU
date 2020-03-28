@@ -44,7 +44,7 @@ class User {
         self.typeToHostedPosts = typeToPosts
         self.postsHosted = postsHosted
         self.postsJoined = postsJoined
-        self.myFriendSpace = [friendSpace(uid: self.uid, name: self.username, people: self.friends, image: self.profilePic)]
+        self.myFriendSpace = [friendSpace(uid: self.uid, name: "my friends", people: self.friends, image: self.profilePic)]
     }
     
     func changeUsername(newName : String) {

@@ -10,18 +10,22 @@
 		328E25F7242C72180017464F /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328E25F6242C72180017464F /* ProfilePageViewController.swift */; };
 		328E25F9242C75BF0017464F /* EventsHostedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328E25F8242C75BF0017464F /* EventsHostedTableViewCell.swift */; };
 		328E25FB242C75CA0017464F /* EventsJoinedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328E25FA242C75CA0017464F /* EventsJoinedTableViewCell.swift */; };
+		328E25FD242E829E0017464F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 328E25FC242E829E0017464F /* GoogleService-Info.plist */; };
 		32BF1FC9242AFAD40021B918 /* VirtualPartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FC8242AFAD40021B918 /* VirtualPartyViewController.swift */; };
 		32BF1FCB242AFD3E0021B918 /* TypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FCA242AFD3E0021B918 /* TypeCollectionViewCell.swift */; };
 		32BF1FCD242B05070021B918 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FCC242B05070021B918 /* PostTableViewCell.swift */; };
 		32BF1FCF242B08C40021B918 /* PartyTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FCE242B08C40021B918 /* PartyTimeCollectionViewCell.swift */; };
 		32BF1FD1242C55F20021B918 /* PartyTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FD0242C55F20021B918 /* PartyTypeCollectionViewCell.swift */; };
 		32BF1FD3242C570A0021B918 /* CreatePartyTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FD2242C570A0021B918 /* CreatePartyTypeViewController.swift */; };
+		32FA40B2242E943300F130D7 /* CreateYourFriendSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FA40B1242E943300F130D7 /* CreateYourFriendSpaceViewController.swift */; };
+		32FA40B4242E98AD00F130D7 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FA40B3242E98AD00F130D7 /* FriendTableViewCell.swift */; };
+		32FA40B6242EE3B500F130D7 /* VoteTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FA40B5242EE3B500F130D7 /* VoteTimeViewController.swift */; };
+		32FA40B8242EE62300F130D7 /* VoteTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FA40B7242EE62300F130D7 /* VoteTimeTableViewCell.swift */; };
 		33C5B176BDD34CF3F80035DB /* Pods_frmUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E927D62EEE9E6E8E72E712E /* Pods_frmUTests.framework */; };
 		8B92E0DB951939ED5ECCE5BC /* Pods_frmU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21F5CA8A5EFD20CE98DECEB /* Pods_frmU.framework */; };
 		BAEB74B095CBCE109663C9CF /* Pods_frmU_frmUUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E67DFC445BC54C759A58C5F /* Pods_frmU_frmUUITests.framework */; };
 		C497F1E7242D5F3D00AC2F2B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C497F1E6242D5F3D00AC2F2B /* Message.swift */; };
 		C497F1E9242D5F6300AC2F2B /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C497F1E8242D5F6300AC2F2B /* Chat.swift */; };
-		C497F1EB242D720E00AC2F2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C497F1EA242D720E00AC2F2B /* GoogleService-Info.plist */; };
 		C497F1ED242D7D1A00AC2F2B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C497F1EC242D7D1A00AC2F2B /* ChatViewController.swift */; };
 		D80B37F1242C1AFC0034660C /* MakeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B37F0242C1AFC0034660C /* MakeDetailViewController.swift */; };
 		D80B37F3242C1D7F0034660C /* ChooseDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B37F2242C1D7F0034660C /* ChooseDateTableViewCell.swift */; };
@@ -66,6 +70,7 @@
 		328E25F6242C72180017464F /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePageViewController.swift; path = frmU/ViewControllers/Make/ProfilePageViewController.swift; sourceTree = SOURCE_ROOT; };
 		328E25F8242C75BF0017464F /* EventsHostedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsHostedTableViewCell.swift; sourceTree = "<group>"; };
 		328E25FA242C75CA0017464F /* EventsJoinedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsJoinedTableViewCell.swift; sourceTree = "<group>"; };
+		328E25FC242E829E0017464F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		32BF1FC5242AFA6C0021B918 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = frmU/ViewControllers/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		32BF1FC8242AFAD40021B918 /* VirtualPartyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualPartyViewController.swift; sourceTree = "<group>"; };
 		32BF1FCA242AFD3E0021B918 /* TypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -73,12 +78,15 @@
 		32BF1FCE242B08C40021B918 /* PartyTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyTimeCollectionViewCell.swift; sourceTree = "<group>"; };
 		32BF1FD0242C55F20021B918 /* PartyTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		32BF1FD2242C570A0021B918 /* CreatePartyTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePartyTypeViewController.swift; sourceTree = "<group>"; };
+		32FA40B1242E943300F130D7 /* CreateYourFriendSpaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateYourFriendSpaceViewController.swift; sourceTree = "<group>"; };
+		32FA40B3242E98AD00F130D7 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		32FA40B5242EE3B500F130D7 /* VoteTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteTimeViewController.swift; sourceTree = "<group>"; };
+		32FA40B7242EE62300F130D7 /* VoteTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteTimeTableViewCell.swift; sourceTree = "<group>"; };
 		9E67DFC445BC54C759A58C5F /* Pods_frmU_frmUUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_frmU_frmUUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBC6ABC6159FA8CD9F669F4B /* Pods-frmU-frmUUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frmU-frmUUITests.debug.xcconfig"; path = "Target Support Files/Pods-frmU-frmUUITests/Pods-frmU-frmUUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C21F5CA8A5EFD20CE98DECEB /* Pods_frmU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_frmU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C497F1E6242D5F3D00AC2F2B /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		C497F1E8242D5F6300AC2F2B /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
-		C497F1EA242D720E00AC2F2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C497F1EC242D7D1A00AC2F2B /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		D80B37F0242C1AFC0034660C /* MakeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDetailViewController.swift; sourceTree = "<group>"; };
 		D80B37F2242C1D7F0034660C /* ChooseDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDateTableViewCell.swift; sourceTree = "<group>"; };
@@ -147,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				32BF1FC8242AFAD40021B918 /* VirtualPartyViewController.swift */,
+				32FA40B5242EE3B500F130D7 /* VoteTimeViewController.swift */,
+				32FA40B1242E943300F130D7 /* CreateYourFriendSpaceViewController.swift */,
 				C497F1EC242D7D1A00AC2F2B /* ChatViewController.swift */,
 			);
 			path = Parties;
@@ -193,8 +203,8 @@
 				D8EDC441242AB0F600043589 /* View */,
 				D8EDC442242AB13700043589 /* ViewControllers */,
 				D8EDC4172429797200043589 /* Assets.xcassets */,
-				C497F1EA242D720E00AC2F2B /* GoogleService-Info.plist */,
 				D8EDC41C2429797200043589 /* Info.plist */,
+				328E25FC242E829E0017464F /* GoogleService-Info.plist */,
 				D8EDC4142429796E00043589 /* frmU.xcdatamodeld */,
 			);
 			path = frmU;
@@ -238,9 +248,11 @@
 				32BF1FCA242AFD3E0021B918 /* TypeCollectionViewCell.swift */,
 				32BF1FCC242B05070021B918 /* PostTableViewCell.swift */,
 				328E25F8242C75BF0017464F /* EventsHostedTableViewCell.swift */,
+				32FA40B7242EE62300F130D7 /* VoteTimeTableViewCell.swift */,
 				328E25FA242C75CA0017464F /* EventsJoinedTableViewCell.swift */,
 				32BF1FCE242B08C40021B918 /* PartyTimeCollectionViewCell.swift */,
 				32BF1FD0242C55F20021B918 /* PartyTypeCollectionViewCell.swift */,
+				32FA40B3242E98AD00F130D7 /* FriendTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -387,8 +399,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8EDC41B2429797200043589 /* LaunchScreen.storyboard in Resources */,
+				328E25FD242E829E0017464F /* GoogleService-Info.plist in Resources */,
 				D8EDC4182429797200043589 /* Assets.xcassets in Resources */,
-				C497F1EB242D720E00AC2F2B /* GoogleService-Info.plist in Resources */,
 				D8EDC4132429796E00043589 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,6 +565,7 @@
 			files = (
 				328E25F9242C75BF0017464F /* EventsHostedTableViewCell.swift in Sources */,
 				D8EDC447242AB1F600043589 /* PartyData.swift in Sources */,
+				32FA40B2242E943300F130D7 /* CreateYourFriendSpaceViewController.swift in Sources */,
 				32BF1FD3242C570A0021B918 /* CreatePartyTypeViewController.swift in Sources */,
 				D8EDC40C2429796E00043589 /* AppDelegate.swift in Sources */,
 				32BF1FCF242B08C40021B918 /* PartyTimeCollectionViewCell.swift in Sources */,
@@ -560,7 +573,9 @@
 				32BF1FD1242C55F20021B918 /* PartyTypeCollectionViewCell.swift in Sources */,
 				328E25F7242C72180017464F /* ProfilePageViewController.swift in Sources */,
 				32BF1FC9242AFAD40021B918 /* VirtualPartyViewController.swift in Sources */,
+				32FA40B8242EE62300F130D7 /* VoteTimeTableViewCell.swift in Sources */,
 				32BF1FCD242B05070021B918 /* PostTableViewCell.swift in Sources */,
+				32FA40B6242EE3B500F130D7 /* VoteTimeViewController.swift in Sources */,
 				32BF1FCB242AFD3E0021B918 /* TypeCollectionViewCell.swift in Sources */,
 				D80B37F3242C1D7F0034660C /* ChooseDateTableViewCell.swift in Sources */,
 				328E25FB242C75CA0017464F /* EventsJoinedTableViewCell.swift in Sources */,
@@ -568,6 +583,7 @@
 				C497F1E9242D5F6300AC2F2B /* Chat.swift in Sources */,
 				D815E701242C88F100958B0C /* LoginViewController.swift in Sources */,
 				D80B37F1242C1AFC0034660C /* MakeDetailViewController.swift in Sources */,
+				32FA40B4242E98AD00F130D7 /* FriendTableViewCell.swift in Sources */,
 				D8EDC4162429796E00043589 /* frmU.xcdatamodeld in Sources */,
 				C497F1E7242D5F3D00AC2F2B /* Message.swift in Sources */,
 				C497F1ED242D7D1A00AC2F2B /* ChatViewController.swift in Sources */,

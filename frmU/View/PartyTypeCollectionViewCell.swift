@@ -12,6 +12,7 @@ class PartyTypeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var typeBackgroundLabel: UIView!
    
-    @IBOutlet weak var emojiLabel: UILabel!
+  
+    @IBOutlet weak var partyImage: UIImageView!
     @IBOutlet weak var typeNameLabel: UILabel!
 }

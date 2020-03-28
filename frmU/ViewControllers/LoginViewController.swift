@@ -11,7 +11,7 @@ import FirebaseAuth
 import GoogleSignIn
 import Firebase
 import FirebaseFirestore
-import SDWebImage
+//import SDWebImageD
 
 //for the first page.
 class LoginViewController: UIViewController{
@@ -31,10 +31,10 @@ class LoginViewController: UIViewController{
         // Do any additional setup after loading the view.
     }
     
-//    @IBAction func googleSignInPressed(_ sender: Any) {
-//        GIDSignIn.sharedInstance()?.signIn()
-//    }
-//
+    @IBAction func googleSignInPressed(_ sender: Any) {
+        GIDSignIn.sharedInstance()?.signIn()
+    }
+
 
     @IBAction func logIn(_ sender: Any) {
         if (signedIn == false) {
@@ -42,9 +42,9 @@ class LoginViewController: UIViewController{
             welcome.reloadInputViews()
         } else {
             self.getUser()
-            
-            SDWebImageManager.shared.loadImage(with: globalPICURL, options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
-                globalUser.profilePic = image}
+
+//            SDWebImageManager.shared.loadImage(with: globalPICURL, options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
+//                globalUser.profilePic = image}
 
 //            globalUser.createNewUser()
             performSegue(withIdentifier: "logIn", sender: sender)
@@ -55,7 +55,7 @@ class LoginViewController: UIViewController{
         //change Post to dictionary to store in firebase.
         func post2dic(post: Post) -> [String : Any] {
             var dictionary : [String : Any] = [:]
-            dictionary.updateValue(post.type, forKey: "type")
+            dictionary.updateValue(post.friendSpace.name, forKey: "type")
             dictionary.updateValue(post.title, forKey: "title")
             dictionary.updateValue(post.location, forKey: "location")
             dictionary.updateValue(post.date, forKey: "date")

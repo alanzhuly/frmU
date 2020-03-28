@@ -14,4 +14,8 @@ class TypeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var typeBackground: UIView!
     
+    @IBOutlet weak var typeBackgroundTwo: UIView!
+    
+    
+    @IBOutlet weak var typeLabelTwo: UILabel!
 }

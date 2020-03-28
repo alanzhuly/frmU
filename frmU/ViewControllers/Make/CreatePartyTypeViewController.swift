@@ -10,15 +10,15 @@ import UIKit
 
 class CreatePartyTypeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    let emojis = ["💤", "💯", "🎬", "🏠", "📝", "🎮"]
-    let partyTypes = ["CS170", "Toppa", "Movies", "Unit1", "Math", "Games"]
+    
     
     var imagePickerController: UIImagePickerController!
     
-    var chosenPartyType:String?
+    var chosenPartyType:friendSpace?
     
     @IBOutlet weak var partyTypeCollectionView: UICollectionView!
     
+    // chosen party image
     @IBOutlet weak var imageLabel: UIImageView!
     
    
@@ -53,22 +53,23 @@ class CreatePartyTypeViewController: UIViewController, UICollectionViewDelegate,
             if identifier == "createToDetails" {
              if let dest = segue.destination as? MakeDetailViewController {
                  dest.image = self.imageLabel.image
-                 dest.type = self.chosenPartyType ?? ""
+                 dest.type = chosenPartyType
                 }
             }
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return partyTypes.count
+        return friendSpacesIn.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let index = indexPath.item
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "partyTypeCell", for: indexPath) as? PartyTypeCollectionViewCell {
-            chosenPartyType = partyTypes[index]
-            cell.emojiLabel.text = emojis[index]
-            cell.typeNameLabel.text = partyTypes[index]
+            chosenPartyType = friendSpacesIn[index]
+            
+            cell.partyImage.image = friendSpacesIn[index].image
+            cell.typeNameLabel.text = friendSpacesIn[index].name
             cell.typeBackgroundLabel .layer.cornerRadius = cell.typeBackgroundLabel.frame.width / 2
             cell.typeBackgroundLabel.layer.borderWidth = 3
                                   cell.typeBackgroundLabel.layer.masksToBounds = false
@@ -81,8 +82,7 @@ class CreatePartyTypeViewController: UIViewController, UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
            let index = indexPath.item
-        let ima = emojis[index].image()
-        imageLabel.image = ima
+        imageLabel.image = friendSpacesIn[index].image
        }
 }
 

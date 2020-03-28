@@ -15,7 +15,7 @@ class MakeDetailViewController: UIViewController, UITableViewDataSource, UITable
     //initialize variable for this Post instance.
     
     //send type and image from segue
-    var type = ""
+    var type: friendSpace?
     var image: UIImage?
     
     var myTitle = "default"
@@ -53,7 +53,7 @@ class MakeDetailViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         imageLabel.image = self.image
-        typeLabel.text = self.type
+        typeLabel.text = self.type?.name
         titleTextField.delegate = self
         locationTextField.delegate = self
         descriptionTextField.delegate = self

@@ -46,15 +46,14 @@ cell.timeBackground.layer.borderWidth = 1
     
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    @IBAction func joinButtonPressed(_ sender: Any) {
-    }
-    
+
     
     @IBOutlet weak var locationLabel: UILabel!
     
   
     @IBOutlet weak var timeCollectionView: UICollectionView!
-    
+
+//    @IBOutlet weak var joinLabel: UIButton!
     
     
     
@@ -67,8 +66,8 @@ cell.timeBackground.layer.borderWidth = 1
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
+
 
 }
