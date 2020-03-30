@@ -105,6 +105,13 @@ class MakeDetailViewController: UIViewController, UITableViewDataSource, UITable
             checkInput.text = "input location plz"
             return
         }
+        
+        if let inputDescription = descriptionTextField.text {
+            myDescription = inputDescription
+        } else {
+            checkInput.text = "input location plz"
+            return
+        }
         //extra check
         if myTitle == "" {
             checkInput.text = "input title plz"
@@ -118,7 +125,12 @@ class MakeDetailViewController: UIViewController, UITableViewDataSource, UITable
             checkInput.text = "input Date plz"
             return
         }
-        let newPost = Post(friendSpace: type!, title: myTitle, location: location, date: dateString, image: image, user: user, userImage: userImage, description: description)
+        if myDescription == "" {
+            checkInput.text = "input Description"
+        }
+        
+        
+        let newPost = Post(friendSpace: type!, title: myTitle, location: location, date: dateString, image: image, user: user, userImage: userImage, description: myDescription)
         globalUser.postsHosted.append(newPost)
         if globalUser.typeToHostedPosts[type!.uid] == nil {
             globalUser.typeToHostedPosts[type!.uid] = [newPost]

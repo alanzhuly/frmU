@@ -66,6 +66,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         print("myFriendSpaceValue: \(globalUser.myFriendSpace[1].posts.count) or \(globalUser.myFriendSpace[0].posts.count)")
         print("ExtraPeople: \(globalUser.myFriendSpace[1].people) + \(globalUser.myFriendSpace[0].people)")
         print("Extra: \(globalUser.myFriendSpace[1].name) or \(globalUser.myFriendSpace[0].name)")
+        print()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

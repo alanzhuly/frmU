@@ -236,11 +236,11 @@ func string2Post(postUID: String) -> Post {
     var actualFriendSpace: friendSpace = friendSpace(uid: "", name: "", people: [], image: UIImage())
     var Thisimage: String = ""
     var Thisuserimage: String = ""
-    let docRef = db.collection("Posts").whereField("image", isEqualTo: postUID)
     var newPost = alanPost
     var nestedList: [[String]] = []
     
-    docRef.getDocuments() { (querySnapshot, error) in
+    let TAdocRef = db.collection("Posts").whereField("image", isEqualTo: postUID)
+    TAdocRef.getDocuments() { (querySnapshot, error) in
         if let error = error {
             print("Error getting documents: \(error)")
         } else {
@@ -254,8 +254,6 @@ func string2Post(postUID: String) -> Post {
                 Thisdate = document.data()["date"] as! [String : String]
                 ThisUser = document.data()["user"] as! String
                 ThisDescription = document.data()["description"] as! String
-                
-                print("LESSSHIT-------")
                 actualFriendSpace = retrieveFriendSpaceWithUID(uid: ThisFriendSpace)
                 
                 Thisimage = document.data()["image"] as! String
@@ -307,7 +305,10 @@ func string2Post(postUID: String) -> Post {
 func listdicToPostList(listDic: [String] ) -> [Post] {
     var postList: [Post] = []
     for postUID in listDic {
-        postList.append(string2Post(postUID: postUID))
+        print("INPUTRIGHT: \(postUID)")
+        let disPost = string2Post(postUID: postUID)
+        postList.append(disPost)
+        print("OUTPUTRIGHT: \(disPost.title)")
     }
     return postList
 }
@@ -317,7 +318,7 @@ func backTypeToHostedPosts (tthp: [String : [String]]) -> [String : [Post]] {
     var dictionary = [String : [Post]]()
     for (type, listPost) in tthp {
         dictionary.updateValue(listdicToPostList(listDic: listPost), forKey: type)
-        print("BIGDICK: \(type)")
+        print("DORIME: \(listPost) and \(dictionary[type]?[0].title) and \(dictionary[type]?[1].title)")
     }
     return dictionary
 }
