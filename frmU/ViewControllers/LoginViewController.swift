@@ -25,6 +25,7 @@ class LoginViewController: UIViewController{
     
     //firebase
     let db = Firestore.firestore()
+    let storage = Storage.storage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,6 @@ class LoginViewController: UIViewController{
             welcome.reloadInputViews()
         } else {
             self.getUser()
-
             SDWebImageManager.shared.loadImage(with: globalPICURL, options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
                 globalUser.profilePic = image}
 
@@ -78,40 +78,63 @@ class LoginViewController: UIViewController{
     
        //helper:
         //change Post to dictionary to store in firebase.
-        func post2dic(post: Post) -> [String : Any] {
-            var dictionary : [String : Any] = [:]
-            dictionary.updateValue(post.friendSpace.name, forKey: "type")
-            dictionary.updateValue(post.title, forKey: "title")
-            dictionary.updateValue(post.location, forKey: "location")
-            dictionary.updateValue(post.date, forKey: "date")
-            dictionary.updateValue(post.user, forKey: "user")
-            //get post's image's uuid when add.
-    //        dictionary.updateValue(<#T##value: [String]##[String]#>, forKey: "image")
-            //get userImage's uuid when add.
-    //        dictionary.updateValue(<#T##value: [String]##[String]#>, forKey: "userImage")
-            dictionary.updateValue(post.description, forKey: "description")
-            return dictionary
+    func post2dic(post: Post, postUID: String) {
+//            var dictionary : [String : Any] = [:]
+//            dictionary.updateValue(post.friendSpace.uid, forKey: "type")
+//            dictionary.updateValue(post.title, forKey: "title")
+//            dictionary.updateValue(post.location, forKey: "location")
+//            dictionary.updateValue(post.date, forKey: "date")
+//            dictionary.updateValue(post.user, forKey: "user")
+//            //get post's image's uuid when add.
+//    //        dictionary.updateValue(<#T##value: [String]##[String]#>, forKey: "image")
+//            //get userImage's uuid when add.
+//    //        dictionary.updateValue(<#T##value: [String]##[String]#>, forKey: "userImage")
+//            dictionary.updateValue(post.description, forKey: "description")
+//            return dictionary
+            let image = post.image
+            
+            //upload image for post.
+            let storageRef = storage.reference(withPath: "postImage/\(postUID).jpg")
+            guard let imageData = image?.jpegData(compressionQuality: 0.75) else {return}
+            let uploadMetadata = StorageMetadata.init()
+            uploadMetadata.contentType = "image/jpeg"
+            storageRef.putData(imageData)
+            
+            //upload image for post's userImage
+            let storageRef2 = storage.reference(withPath: "userImage/\(globalUID).jpg")
+            guard let imageData2 = globalUser.profilePic?.jpegData(compressionQuality: 0.75) else {return}
+            let uploadMetadata2 = StorageMetadata.init()
+            uploadMetadata2.contentType = "image/jpeg"
+            storageRef2.putData(imageData2)
+            var dateDictionary = [String: String]()
+            for d in post.date {
+                dateDictionary.updateValue(d[1], forKey: d[0])
+            }
+        let data: [String: Any] = ["friendSpace": post.friendSpace.uid, "title": post.title, "location": post.location, "date": dateDictionary, "image": postUID, "user": post.user, "userImage": globalUID, "description": post.description]
+            //            var ref: DocumentReference? = nil
+            db.collection("Posts").document(postUID).setData(data) {err in
+                            if let err = err {
+                                print("Error adding document: \(err)")
+                            } else {
+                                print("Document successfully written!")
+                            }
+                        }
         }
         
         //helper change post list to a list of dictionaries.
-        func postlist2dic (posts: [Post]) -> [[String : Any]] {
-            var listOfDictionary: [[String : Any]] = []
+        func postlist2dic (posts: [Post]) -> [String] {
+            var uidsOfPosts: [String] = []
             for each in posts {
-                listOfDictionary.append(post2dic(post: each))
+                let postUID = UUID.init().uuidString
+                post2dic(post: each, postUID: postUID)
+                uidsOfPosts.append(postUID)
             }
             print("reached 99")
-            return listOfDictionary
+            return uidsOfPosts
         }
-        
-        //helper: change dictionary back to post with correct image and correct Post Class.
-        //implement image and others first.
-        func reversePost2Dic(dictionary: [String : [String]]) {
-            
-        }
-        
     
-    func convertTypeToHostedPosts (posts: [String : [Post]]) -> [String : [[String: Any]]] {
-        var dictionary: [String : [[String: Any]]] = [:]
+    func convertTypeToHostedPosts (posts: [String : [Post]]) -> [String : [String]] {
+        var dictionary = [String : [String]]()
         for (type, listPost) in posts {
             dictionary.updateValue(postlist2dic(posts: listPost), forKey: type)
         }
@@ -122,23 +145,22 @@ class LoginViewController: UIViewController{
     //        globalUser = User(username: globalUSERNAME, profilePic: UIImage(named: "Alan"), uid: globalUID, friends: [], typeToPosts: [String : [Post]](), postsHosted: [], postsJoined: [])
             //above for real app
             //for testing, use fake user below
-            globalUser = Alan
-            let typeTHP: [String : [[String: Any]]] = convertTypeToHostedPosts(posts: globalUser.typeToHostedPosts)
-            
-            //add profilePic later.
+            globalUser = User(username: globalUSERNAME, profilePic: UIImage(named: "Alan"), uid: globalUID, friends: [globalUID], typeToPosts: [String : [Post]](), postsHosted: [], postsJoined: [])
             //add myFriendSpace later, now default it to something.
             let data: [String: Any] = [
                 "username": globalUser.username, "uid": globalUser.uid, "friends": globalUser.friends,
-                "typeToHostedPosts": typeTHP, "postsHosted": postlist2dic(posts: globalUser.postsHosted), "postsJoined": postlist2dic(posts: globalUser.postsJoined)]
-            var ref: DocumentReference? = nil
-            ref = db.collection("Users").addDocument(data: data) {err in
+                "typeToHostedPosts": convertTypeToHostedPosts(posts: globalUser.typeToHostedPosts), "postsHosted": postlist2dic(posts: globalUser.postsHosted), "postsJoined": postlist2dic(posts: globalUser.postsJoined), "myFriendSpace": [globalUser.myFriendSpace[0].uid], "profilePicURL": globalPICURL?.absoluteString]
+//            var ref: DocumentReference? = nil
+            db.collection("Users").document(globalUID).setData(data) {err in
                 if let err = err {
                     print("Error adding document: \(err)")
                 } else {
-                    print("Document added with ID: \(ref!.documentID)")
+                    print("Document successfully written!")
                 }
             }
-            print("reached 01")
+            print("create User success")
+            //Then add each User's "My Friends" friendspace to firebase
+            globalUser.myFriendSpace[0].uploadNewFriendSpace()
             
         }
         //Create User if not created in the table.
@@ -146,7 +168,6 @@ class LoginViewController: UIViewController{
         func getUser() {
             
             //Fetch the User with the globalUID
-            print(globalUID)
             let userDocument = db.collection("Users").whereField("uid", isEqualTo: globalUID)
             userDocument.getDocuments { (userQuerySnap, error) in
                 
@@ -163,8 +184,8 @@ class LoginViewController: UIViewController{
                     if queryCount == 0 {
                         //If documents count is zero that means there is no User available and we need to create a new instance of this user with the globalUID and globalUSERNAME.
                         self.createNewUser()
+                        print("FUCKNO")
                     }
-                    
                 }
                 
             }

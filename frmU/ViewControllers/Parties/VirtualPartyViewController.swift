@@ -9,7 +9,7 @@
 import UIKit
 
 class VirtualPartyViewController: UIViewController,  UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
-    var selectedType: friendSpace = CS170
+    var selectedType: friendSpace = globalUser.myFriendSpace[0]
     var selectedPost:Post?
     
     @IBOutlet weak var typeCollectionView: UICollectionView!
@@ -22,13 +22,15 @@ class VirtualPartyViewController: UIViewController,  UICollectionViewDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
         typeCollectionView.delegate = self
         typeCollectionView.dataSource = self
 
         postTableView.delegate = self
         postTableView.dataSource = self
+        typeCollectionView.reloadData()
+        postTableView.reloadData()
+        print("------- Nothing -------------")
+        refreshData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,12 +40,14 @@ class VirtualPartyViewController: UIViewController,  UICollectionViewDelegate, U
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return friendSpacesIn.count + 1
+        print("collection view count:")
+        print(globalUser.myFriendSpace.count+1)
+        return globalUser.myFriendSpace.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let index = indexPath.item
-        if (index == friendSpacesIn.count) {
+        if (index == globalUser.myFriendSpace.count) {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createNewFriendSpaceCell", for: indexPath) as? TypeCollectionViewCell {
                 cell.typeLabelTwo.text = "➕"
                 cell.typeBackgroundTwo.layer.cornerRadius = cell.typeBackgroundTwo.frame.width / 2
@@ -55,7 +59,7 @@ class VirtualPartyViewController: UIViewController,  UICollectionViewDelegate, U
             }
         } else {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "typeCell", for: indexPath) as? TypeCollectionViewCell {
-                cell.typeLabel.text = friendSpacesIn[index].name
+                cell.typeLabel.text = globalUser.myFriendSpace[index].name
                  cell.typeBackground.layer.cornerRadius = 25
                            cell.typeBackground.layer.borderWidth = 3
                 cell.typeBackground.layer.borderColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
@@ -69,14 +73,20 @@ class VirtualPartyViewController: UIViewController,  UICollectionViewDelegate, U
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let index = indexPath.item
-        if (index == friendSpacesIn.count) {
+        if (index == globalUser.myFriendSpace.count) {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createNewFriendSpaceCell", for: indexPath) as? TypeCollectionViewCell {
                 performSegue(withIdentifier: "toCreateNewFriendSpace", sender: cell)
             }
 
         } else {
-            selectedType = friendSpacesIn[index]
+            selectedType = globalUser.myFriendSpace[index]
             postTableView.reloadData()
+            collectionView.reloadData()
+            print("SELECTED TYPE")
+            print(selectedType.posts.count)
+            print(selectedType.uid)
+            print(selectedType.name)
+            
         }
     }
     

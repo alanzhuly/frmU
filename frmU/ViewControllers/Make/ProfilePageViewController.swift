@@ -43,7 +43,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
        
         eventsJoinedTableView.delegate = self
         eventsJoinedTableView.dataSource = self
-       
+        refreshData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +54,19 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 300
 //    }
+    @IBAction func myFriends(_ sender: Any) {
+        print("--------myFriends PRESSED--------")
+        print("Check Global User: ---------------")
+        print("myfriendSpace #: \(globalUser.myFriendSpace.count)")
+        print("First FriendSpace: \(globalUser.myFriendSpace[0].uid)")
+        print("Second FriendSpace: \(globalUser.myFriendSpace[1].uid)")
+        print("PostTypeToSomething: \(globalUser.typeToHostedPosts.keys)")
+        let myPost = globalUser.typeToHostedPosts["05F91593-EC45-4E39-9ECC-8904715ADAB9"]?[0]
+        print("PostToDisplay: \(myPost?.title)")
+        print("myFriendSpaceValue: \(globalUser.myFriendSpace[1].posts.count) or \(globalUser.myFriendSpace[0].posts.count)")
+        print("ExtraPeople: \(globalUser.myFriendSpace[1].people) + \(globalUser.myFriendSpace[0].people)")
+        print("Extra: \(globalUser.myFriendSpace[1].name) or \(globalUser.myFriendSpace[0].name)")
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == eventsHostedTableView {

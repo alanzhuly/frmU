@@ -45,11 +45,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         globalUID = user.userID
         globalUSERNAME = user.profile.name
         // For client-side use only!
-          let idToken = user.authentication.idToken // Safe to send to the server
+        let idToken = user.authentication.idToken // Safe to send to the server
             globalUser.username = user.profile.name
-          let email = user.profile.email
+        let email = user.profile.email
           // ...
-            signedIn = true
+        signedIn = true
         if user.profile.hasImage {
             globalPICURL = user.profile.imageURL(withDimension: 200)
         }

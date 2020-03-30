@@ -79,11 +79,10 @@ class MakeDetailViewController: UIViewController, UITableViewDataSource, UITable
     
     
     @IBAction func sendPostButtonPressed(_ sender: Any) {
-        print("reached here 02")
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yy HH:mm"
         dateFormatter.timeZone = NSTimeZone(name: "Pacific Daylight Time") as TimeZone?
-        var dateString: [[String]] = [[]]
+        var dateString: [[String]] = []
         for d in date {
             dateString.append([dateFormatter.string(from: d), "0"])
         }
@@ -91,7 +90,6 @@ class MakeDetailViewController: UIViewController, UITableViewDataSource, UITable
             print(dateString)
             return
         }
-        
         //get title info
         if let inputTitle = titleTextField.text {
             myTitle = inputTitle
@@ -120,7 +118,6 @@ class MakeDetailViewController: UIViewController, UITableViewDataSource, UITable
             checkInput.text = "input Date plz"
             return
         }
-        
         let newPost = Post(friendSpace: type!, title: myTitle, location: location, date: dateString, image: image, user: user, userImage: userImage, description: description)
         globalUser.postsHosted.append(newPost)
         if globalUser.typeToHostedPosts[type!.uid] == nil {
@@ -130,6 +127,8 @@ class MakeDetailViewController: UIViewController, UITableViewDataSource, UITable
             l.append(newPost)
             globalUser.typeToHostedPosts[type!.uid] = l
         }
+        type!.addPost(post: newPost)
+        globalUser.updateUser()
         performSegue(withIdentifier: "makeSuccess", sender: sender)
        
       }

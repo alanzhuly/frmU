@@ -6,8 +6,12 @@
 //  Copyright © 2020 FRM. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import FirebaseAuth
+import GoogleSignIn
+import Firebase
+import FirebaseFirestore
+import SDWebImage
 
 
 //Create a struck that stores the INFO for each made party.
@@ -102,40 +106,218 @@ var globalUID = ""
 var globalUSERNAME = ""
 var globalPICURL: URL?
 
+//change this later to globalUser.
 var friendSpacesIn: [friendSpace] = [CS170, Berkeley, Unit1, toppa, DSC, Stats, blockchain]
 
 
-var vP = virtualParties()
+let db = Firestore.firestore()
+let storage = Storage.storage()
 
-
-class virtualParties {
-    
-    var allPosts: [Post] = []
-    
-    init() {
-        for f in globalUser.friends {
-            let ff = useridToUser(f)
-            for p in ff.postsHosted {
-                allPosts.append(p)
-            }
-            for p in ff.postsJoined {
-                allPosts.append(p)
-            }
+//global functions for firebase
+//get friend space w/ uid
+//implement image later
+func retrieveFriendSpaceWithUID(uid: String) -> friendSpace {
+    var ThisUid = ""
+    var ThisName = ""
+    var ThisPeople: [String] = []
+    let docRef = db.collection("friendSpace").document(uid)
+    var newFriendSpace = CS170
+    docRef.getDocument { (document, error) in
+        if let document = document, document.exists {
+            ThisUid = uid
+            ThisName = document.data()?["name"] as! String
+            ThisPeople = document.data()?["people"] as! [String]
+            newFriendSpace.uid = ThisUid
+            newFriendSpace.name = ThisName
+            newFriendSpace.people = ThisPeople
+            newFriendSpace = friendSpace(uid: uid, name: ThisName, people: ThisPeople, image: UIImage())
+        } else {
+            print("Document does not exist")
         }
     }
-    
-    func addPost(post: Post) {
-        allPosts.append(post)
-    }
+    return newFriendSpace
+}
 
-    func addFriendSpaces(friendSpace: friendSpace) {
-        friendSpacesIn.append(friendSpace)
+//global functions for firebase
+//retrieve a user with a particular UID
+// this only get called when the user is there.
+// Make sure to update friendSpace as well.
+//also update this user's User.myFriendSpace
+func retrieveUser(uid: String) {
+    let db = Firestore.firestore()
+    var ThisUsername = ""
+    var ThisUid = ""
+    var ThisFriends: [String] = []
+    var ThisTypeToHostedPosts = [String : [String]]()
+    var ThisPostsHosted = [String]()
+    var ThisPostsJoined = [String]()
+    var ThisFriendSpace = [String]()
+    var profilePicURL = ""
+    var realMyFriendSpace: [friendSpace] = []
+    var actualPostsHosted: [Post] = []
+    var actualPostsJoined: [Post] = []
+    var actualTypeToPosts = [String : [Post]]()
+//    var retrievedUser = User(username: ThisUsername, profilePic: UIImage(named: "dorm"), uid: ThisUid, friends: ThisFriends, typeToPosts: actualTypeToPosts, postsHosted: actualPostsHosted, postsJoined: actualPostsJoined)
+    let docRef = db.collection("Users").whereField("uid", isEqualTo: uid)
+    var newFS = CS170
+    docRef.getDocuments() { (querySnapshot, error) in
+        if let error = error {
+            print("Error getting documents: \(error)")
+        } else {
+            if ((querySnapshot?.documents.count)! > 1) {
+                print("FUCK! More than one User")
+            }
+            for document in querySnapshot!.documents {
+                ThisUsername = document.data()["username"] as! String
+                ThisUid = document.data()["uid"] as! String
+                ThisFriends = document.data()["friends"] as! [String]
+                ThisTypeToHostedPosts = document.data()["typeToHostedPosts"] as! [String : [String]]
+                ThisPostsHosted = document.data()["postsHosted"] as! [String]
+
+                ThisPostsJoined = document.data()["postsJoined"] as! [String]
+                ThisFriendSpace = document.data()["myFriendSpace"] as! [String]
+                profilePicURL = document.data()["profilePicURL"] as! String
+            }
+            var ThisImage = UIImage(named: "Alan")
+            var imageURL: URL?
+               imageURL = URL(string: profilePicURL)
+               SDWebImageManager.shared.loadImage(with: imageURL, options: .highPriority, progress: nil) {
+                   (image, data, error, cacheType, isFinished, imageUrl) in
+                   ThisImage = image
+               }
+            for fsUID in ThisFriendSpace {
+                newFS = friendSpace(uid: fsUID, name: "RANDOM", people: [], image: UIImage())
+                print("\(newFS.uid)")
+                newFS.refreshNewFriendSpace()
+                realMyFriendSpace.append(newFS)
+                print("COUNT: \(ThisFriendSpace)")
+                print("\(newFS.uid)")
+            }
+            globalUser.myFriendSpace = realMyFriendSpace
+            actualPostsHosted = listdicToPostList(listDic: ThisPostsHosted)
+            actualPostsJoined = listdicToPostList(listDic: ThisPostsJoined)
+            actualTypeToPosts = backTypeToHostedPosts(tthp: ThisTypeToHostedPosts)
+            globalUser.username = ThisUsername
+            globalUser.profilePic = ThisImage
+            globalUser.uid = ThisUid
+            globalUser.friends = ThisFriends
+            globalUser.typeToHostedPosts = actualTypeToPosts
+            globalUser.postsHosted = actualPostsHosted
+            globalUser.postsJoined = actualPostsJoined
+//               retrievedUser = User(username: ThisUsername, profilePic: ThisImage, uid: ThisUid, friends: ThisFriends, typeToPosts: actualTypeToPosts, postsHosted: actualPostsHosted, postsJoined: actualPostsJoined)
+        }
+    }
+//    print("Second FriendSpace: \(globalUser.myFriendSpace[1].uid)")
+}
+
+//refresh this user's information real time.
+//implement real time listener later.
+//manually update for now. draw data once.
+//This function is called everytime we need to update data.
+//1. refresh User when add post and add friend.
+//2. make sure to update "My Friends" friendSpace
+//3. refresh all information in friendSpace too.
+//refresh Data for the current user: globalUser
+func refreshData() {
+    retrieveUser(uid: globalUID)
+}
+
+//helper funcions for retrieve User
+//implement image later
+//also fetch userImage
+//fetch image from storage here.
+func string2Post(postUID: String) -> Post {
+    var ThisFriendSpace: String = ""
+    var ThisTitle: String = ""
+    var ThisLocation: String = ""
+    var Thisdate = [String: String]()
+    var ThisUser: String = ""
+    var ThisDescription: String = ""
+    var actualFriendSpace: friendSpace = friendSpace(uid: "", name: "", people: [], image: UIImage())
+    var Thisimage: String = ""
+    var Thisuserimage: String = ""
+    let docRef = db.collection("Posts").whereField("image", isEqualTo: postUID)
+    var newPost = alanPost
+    var nestedList: [[String]] = []
+    
+    docRef.getDocuments() { (querySnapshot, error) in
+        if let error = error {
+            print("Error getting documents: \(error)")
+        } else {
+            if ((querySnapshot?.documents.count)! > 1) {
+                print("FUCK! More than one Post?")
+            }
+            for document in querySnapshot!.documents {
+                ThisFriendSpace = document.data()["friendSpace"] as! String
+                ThisTitle = document.data()["title"] as! String
+                ThisLocation = document.data()["location"] as! String
+                Thisdate = document.data()["date"] as! [String : String]
+                ThisUser = document.data()["user"] as! String
+                ThisDescription = document.data()["description"] as! String
+                
+                print("LESSSHIT-------")
+                actualFriendSpace = retrieveFriendSpaceWithUID(uid: ThisFriendSpace)
+                
+                Thisimage = document.data()["image"] as! String
+                print("WAY BEFORE IMAGE: \(Thisimage)")
+                Thisuserimage = document.data()["userImage"] as! String
+            }
+        }
+        for (day, vote) in Thisdate {
+            nestedList.append([day, vote])
+        }
+        newPost.friendSpace = actualFriendSpace
+        newPost.title = ThisTitle
+        newPost.location = ThisLocation
+        newPost.date = nestedList
+        newPost.description = ThisDescription
+                
+                print("Before image1: \(Thisimage)")
+                let storageRef = storage.reference(withPath: "postImage/\(Thisimage).jpg")
+                storageRef.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
+                    if error != nil {
+                        print("error getting post image")
+            //            print("imageID: \(Thisimage)")
+            //            print("ERROR IS \(error)")
+                    }
+                    if let data = data {
+                        let image = UIImage(data:data)
+                        newPost.image = image
+                    }
+                }
+                
+                print("Before image2: \(Thisuserimage)")
+                let storageRef2 = storage.reference(withPath: "userImage/\(Thisuserimage).jpg")
+                   storageRef2.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
+                       if error != nil {
+                           print("error getting post userimage")
+            //            print("ERROR IS \(error)")
+                       }
+                       if let data = data {
+                           let image2 = UIImage(data:data)
+                           newPost.userImage = image2
+                       }
+                   }
     }
     
-    func useridToUser(_ id: String) -> User {
-        let useridToUser = ["grace":Grace, "alan":Alan, "amy": Amy, "selina": Selina, "tom":Tom, "jerry": Jerry]
-        return useridToUser[id] ?? dum2
+    return newPost
+}
+
+//turn listdicTo Post list
+func listdicToPostList(listDic: [String] ) -> [Post] {
+    var postList: [Post] = []
+    for postUID in listDic {
+        postList.append(string2Post(postUID: postUID))
     }
-    
-    
+    return postList
+}
+
+//get type to hosted posts from data
+func backTypeToHostedPosts (tthp: [String : [String]]) -> [String : [Post]] {
+    var dictionary = [String : [Post]]()
+    for (type, listPost) in tthp {
+        dictionary.updateValue(listdicToPostList(listDic: listPost), forKey: type)
+        print("BIGDICK: \(type)")
+    }
+    return dictionary
 }

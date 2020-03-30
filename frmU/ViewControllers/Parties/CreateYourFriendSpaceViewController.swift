@@ -14,7 +14,7 @@ class CreateYourFriendSpaceViewController: UIViewController, UITableViewDataSour
     
     var imagePickerController: UIImagePickerController!
     
-    var newFriendSpace = friendSpace(uid: Grace.uid, name: "", people: [], image: nil)
+    var newFriendSpace = friendSpace(uid: Grace.uid, name: "PLZ NO", people: [], image: UIImage(named: "dorm"))
     
     @IBOutlet weak var image: UIImageView!
     
@@ -40,7 +40,11 @@ class CreateYourFriendSpaceViewController: UIViewController, UITableViewDataSour
             newFriendSpace.name = t
             newFriendSpace.image = self.image.image
             newFriendSpace.uid = UUID.init().uuidString
-            vP.addFriendSpaces(friendSpace: newFriendSpace)
+            //implement add friends later.
+            newFriendSpace.people = [globalUser.uid]
+            globalUser.addFriendSpace(disfriendSpace: newFriendSpace)
+            globalUser.updateUser()
+            newFriendSpace.uploadNewFriendSpace()
         }
         _ = navigationController?.popViewController(animated: true)
     }
@@ -83,8 +87,9 @@ class CreateYourFriendSpaceViewController: UIViewController, UITableViewDataSour
         let index = indexPath.row
        let friend = globalUser.friends[index]
        if let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as? FriendTableViewCell {
-        cell.friendName.text = vP.useridToUser(friend).username
-        cell.friendProfileImage.image = vP.useridToUser(friend).profilePic
+        //implement later
+//        cell.friendName.text = globalUser.useridToUser(friend).username
+//        cell.friendProfileImage.image = vP.useridToUser(friend).profilePic
            return cell
 
        } else {
