@@ -55,6 +55,7 @@ class Post {
 //construct fake user Alan for testing.
 
 //test I can see my Post
+// all tests below, ignore them.
 
 let dum = Post(friendSpace: Berkeley, title: "movie Party" , location: "Google Hangout", date: [["2/3 4pm", "1"], ["2/3 5am", "3"], ["2/26 7pm", "2"], ["2/23 3pm", "5"]], image: UIImage(named: "movies"), user: "lucy", userImage: UIImage(named: "lucy"), description: "ZOOM Cinema")
 
@@ -257,7 +258,6 @@ func string2Post(postUID: String) -> Post {
                 actualFriendSpace = retrieveFriendSpaceWithUID(uid: ThisFriendSpace)
                 
                 Thisimage = document.data()["image"] as! String
-                print("WAY BEFORE IMAGE: \(Thisimage)")
                 Thisuserimage = document.data()["userImage"] as! String
             }
         }
@@ -305,10 +305,8 @@ func string2Post(postUID: String) -> Post {
 func listdicToPostList(listDic: [String] ) -> [Post] {
     var postList: [Post] = []
     for postUID in listDic {
-        print("INPUTRIGHT: \(postUID)")
         let disPost = string2Post(postUID: postUID)
         postList.append(disPost)
-        print("OUTPUTRIGHT: \(disPost.title)")
     }
     return postList
 }
@@ -318,7 +316,6 @@ func backTypeToHostedPosts (tthp: [String : [String]]) -> [String : [Post]] {
     var dictionary = [String : [Post]]()
     for (type, listPost) in tthp {
         dictionary.updateValue(listdicToPostList(listDic: listPost), forKey: type)
-        print("DORIME: \(listPost) and \(dictionary[type]?[0].title) and \(dictionary[type]?[1].title)")
     }
     return dictionary
 }

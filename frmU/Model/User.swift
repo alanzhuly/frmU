@@ -153,7 +153,6 @@ class User {
                     post2dic(post: each, postUID: postUID)
                     uidsOfPosts.append(postUID)
                 }
-                print("reached 99")
                 return uidsOfPosts
             }
         
