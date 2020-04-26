@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -280,42 +280,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOB-9A-vi1">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Kc-0o-wG4">
                                                     <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Kc-0o-wG4">
-                                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="75" id="Iia-BC-yqi"/>
-                                                                <constraint firstAttribute="height" constant="75" id="tTW-Fy-ycN"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
-                                                        <constraint firstItem="6Kc-0o-wG4" firstAttribute="top" secondItem="fOB-9A-vi1" secondAttribute="top" id="2Ak-tD-Ybb"/>
-                                                        <constraint firstItem="6Kc-0o-wG4" firstAttribute="leading" secondItem="fOB-9A-vi1" secondAttribute="leading" id="58u-F8-ftf"/>
-                                                        <constraint firstAttribute="bottom" secondItem="6Kc-0o-wG4" secondAttribute="bottom" id="XTn-X9-hFf"/>
-                                                        <constraint firstAttribute="trailing" secondItem="6Kc-0o-wG4" secondAttribute="trailing" id="hBr-7Q-lBx"/>
+                                                        <constraint firstAttribute="width" constant="75" id="YkL-PM-TDo"/>
+                                                        <constraint firstAttribute="height" constant="75" id="aNV-hg-fK7"/>
                                                     </constraints>
-                                                </view>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="fOB-9A-vi1" firstAttribute="top" secondItem="INt-Lp-E8D" secondAttribute="top" id="5Ar-hI-cJu"/>
-                                                <constraint firstAttribute="bottom" secondItem="fOB-9A-vi1" secondAttribute="bottom" id="HOQ-iR-ee8"/>
-                                                <constraint firstAttribute="trailing" secondItem="fOB-9A-vi1" secondAttribute="trailing" id="kFB-4a-3h5"/>
-                                                <constraint firstItem="fOB-9A-vi1" firstAttribute="leading" secondItem="INt-Lp-E8D" secondAttribute="leading" id="zXR-mt-DOE"/>
+                                                <constraint firstItem="6Kc-0o-wG4" firstAttribute="top" secondItem="INt-Lp-E8D" secondAttribute="top" id="6Gd-DX-b7v"/>
+                                                <constraint firstItem="6Kc-0o-wG4" firstAttribute="leading" secondItem="INt-Lp-E8D" secondAttribute="leading" id="8IM-jT-MuQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="6Kc-0o-wG4" secondAttribute="bottom" id="tIR-f0-0Ny"/>
+                                                <constraint firstAttribute="trailing" secondItem="6Kc-0o-wG4" secondAttribute="trailing" id="tca-Cu-oSD"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <outlet property="typeBackground" destination="fOB-9A-vi1" id="n3x-lZ-ZgV"/>
                                             <outlet property="typeLabel" destination="6Kc-0o-wG4" id="zt4-zE-gac"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="createNewFriendSpaceCell" id="m9d-yu-uSV" customClass="TypeCollectionViewCell" customModule="frmU" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="createNewFriendSpaceCell" id="m9d-yu-uSV" customClass="CreateNewFSCollectionViewCell" customModule="frmU" customModuleProvider="target">
                                         <rect key="frame" x="85" y="2.5" width="75" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="n36-Z8-KN3">
@@ -353,8 +340,8 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <outlet property="typeBackgroundTwo" destination="zvu-3r-ubA" id="fYP-7g-0pW"/>
-                                            <outlet property="typeLabelTwo" destination="5ys-zC-0xE" id="19c-Mr-jNj"/>
+                                            <outlet property="CreateNewBackground" destination="zvu-3r-ubA" id="y6V-bz-3dc"/>
+                                            <outlet property="CreateNewLabel" destination="5ys-zC-0xE" id="JK0-xR-hCs"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

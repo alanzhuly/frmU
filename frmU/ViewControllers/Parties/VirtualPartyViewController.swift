@@ -38,6 +38,7 @@ class VirtualPartyViewController: UIViewController,  UICollectionViewDelegate, U
         postTableView.reloadData()
     }
     
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("collection view count:")
@@ -48,23 +49,19 @@ class VirtualPartyViewController: UIViewController,  UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let index = indexPath.item
         if (index == globalUser.myFriendSpace.count) {
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createNewFriendSpaceCell", for: indexPath) as? TypeCollectionViewCell {
-                cell.typeLabelTwo.text = "➕"
-                cell.typeBackgroundTwo.layer.cornerRadius = cell.typeBackgroundTwo.frame.width / 2
-                           cell.typeBackgroundTwo.layer.borderWidth = 3
-                           cell.typeBackgroundTwo.layer.masksToBounds = false
-                cell.typeBackgroundTwo.backgroundColor = .yellow
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createNewFriendSpaceCell", for: indexPath) as? CreateNewFSCollectionViewCell {
+                cell.CreateNewLabel.text = "➕"
+                cell.CreateNewBackground.layer.cornerRadius = cell.CreateNewBackground.frame.width / 2
+                           cell.CreateNewBackground.layer.borderWidth = 3
+                           cell.CreateNewBackground.layer.masksToBounds = false
+                cell.CreateNewBackground.backgroundColor = .yellow
                 return cell
 
             }
         } else {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "typeCell", for: indexPath) as? TypeCollectionViewCell {
                 cell.typeLabel.text = globalUser.myFriendSpace[index].name
-                 cell.typeBackground.layer.cornerRadius = 25
-                           cell.typeBackground.layer.borderWidth = 3
-                cell.typeBackground.layer.borderColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
-                           cell.typeBackground.layer.masksToBounds = false
-                cell.typeBackground.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//
                 return cell
             }
         }
@@ -74,18 +71,19 @@ class VirtualPartyViewController: UIViewController,  UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let index = indexPath.item
         if (index == globalUser.myFriendSpace.count) {
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createNewFriendSpaceCell", for: indexPath) as? TypeCollectionViewCell {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "createNewFriendSpaceCell", for: indexPath) as? CreateNewFSCollectionViewCell {
                 performSegue(withIdentifier: "toCreateNewFriendSpace", sender: cell)
             }
-
         } else {
-            selectedType = globalUser.myFriendSpace[index]
-            postTableView.reloadData()
-            collectionView.reloadData()
-            print("SELECTED TYPE")
-            print(selectedType.posts.count)
-            print(selectedType.uid)
-            print(selectedType.name)
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "typeCell", for: indexPath) as? TypeCollectionViewCell {
+                selectedType = globalUser.myFriendSpace[index]
+                postTableView.reloadData()
+                print("SELECTED TYPE")
+                print(selectedType.posts.count)
+                print(selectedType.uid)
+                print(selectedType.name)
+            }
+            
             
         }
     }

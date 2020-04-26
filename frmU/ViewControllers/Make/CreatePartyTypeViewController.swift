@@ -52,10 +52,10 @@ class CreatePartyTypeViewController: UIViewController, UICollectionViewDelegate,
         super.viewDidLoad()
         partyTypeCollectionView.delegate = self
         partyTypeCollectionView.dataSource = self
-        
+        partyTypeCollectionView.reloadData()
         self.imagePickerController = UIImagePickerController()
-         self.imagePickerController.delegate = self
-         refreshData()
+        self.imagePickerController.delegate = self
+        refreshData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)  {

@@ -11,7 +11,6 @@
 		328E25F9242C75BF0017464F /* EventsHostedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328E25F8242C75BF0017464F /* EventsHostedTableViewCell.swift */; };
 		328E25FB242C75CA0017464F /* EventsJoinedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328E25FA242C75CA0017464F /* EventsJoinedTableViewCell.swift */; };
 		32BF1FC9242AFAD40021B918 /* VirtualPartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FC8242AFAD40021B918 /* VirtualPartyViewController.swift */; };
-		32BF1FCB242AFD3E0021B918 /* TypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FCA242AFD3E0021B918 /* TypeCollectionViewCell.swift */; };
 		32BF1FCD242B05070021B918 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FCC242B05070021B918 /* PostTableViewCell.swift */; };
 		32BF1FCF242B08C40021B918 /* PartyTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FCE242B08C40021B918 /* PartyTimeCollectionViewCell.swift */; };
 		32BF1FD1242C55F20021B918 /* PartyTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BF1FD0242C55F20021B918 /* PartyTypeCollectionViewCell.swift */; };
@@ -23,6 +22,8 @@
 		33C5B176BDD34CF3F80035DB /* Pods_frmUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E927D62EEE9E6E8E72E712E /* Pods_frmUTests.framework */; };
 		8B92E0DB951939ED5ECCE5BC /* Pods_frmU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21F5CA8A5EFD20CE98DECEB /* Pods_frmU.framework */; };
 		BAEB74B095CBCE109663C9CF /* Pods_frmU_frmUUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E67DFC445BC54C759A58C5F /* Pods_frmU_frmUUITests.framework */; };
+		C4186AE2245521DA005D5E7C /* CreateNewFSCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4186AE1245521DA005D5E7C /* CreateNewFSCollectionViewCell.swift */; };
+		C4186AE424552220005D5E7C /* TypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4186AE324552220005D5E7C /* TypeCollectionViewCell.swift */; };
 		C497F1E7242D5F3D00AC2F2B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C497F1E6242D5F3D00AC2F2B /* Message.swift */; };
 		C497F1E9242D5F6300AC2F2B /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C497F1E8242D5F6300AC2F2B /* Chat.swift */; };
 		C497F1ED242D7D1A00AC2F2B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C497F1EC242D7D1A00AC2F2B /* ChatViewController.swift */; };
@@ -72,7 +73,6 @@
 		328E25FA242C75CA0017464F /* EventsJoinedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsJoinedTableViewCell.swift; sourceTree = "<group>"; };
 		32BF1FC5242AFA6C0021B918 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = frmU/ViewControllers/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		32BF1FC8242AFAD40021B918 /* VirtualPartyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualPartyViewController.swift; sourceTree = "<group>"; };
-		32BF1FCA242AFD3E0021B918 /* TypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		32BF1FCC242B05070021B918 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		32BF1FCE242B08C40021B918 /* PartyTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyTimeCollectionViewCell.swift; sourceTree = "<group>"; };
 		32BF1FD0242C55F20021B918 /* PartyTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyTypeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -84,6 +84,8 @@
 		9E67DFC445BC54C759A58C5F /* Pods_frmU_frmUUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_frmU_frmUUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBC6ABC6159FA8CD9F669F4B /* Pods-frmU-frmUUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frmU-frmUUITests.debug.xcconfig"; path = "Target Support Files/Pods-frmU-frmUUITests/Pods-frmU-frmUUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C21F5CA8A5EFD20CE98DECEB /* Pods_frmU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_frmU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4186AE1245521DA005D5E7C /* CreateNewFSCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewFSCollectionViewCell.swift; sourceTree = "<group>"; };
+		C4186AE324552220005D5E7C /* TypeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		C497F1E6242D5F3D00AC2F2B /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		C497F1E8242D5F6300AC2F2B /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		C497F1EC242D7D1A00AC2F2B /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -245,7 +247,8 @@
 			children = (
 				D8EDC4112429796E00043589 /* Main.storyboard */,
 				D8EDC4192429797200043589 /* LaunchScreen.storyboard */,
-				32BF1FCA242AFD3E0021B918 /* TypeCollectionViewCell.swift */,
+				C4186AE324552220005D5E7C /* TypeCollectionViewCell.swift */,
+				C4186AE1245521DA005D5E7C /* CreateNewFSCollectionViewCell.swift */,
 				32BF1FCC242B05070021B918 /* PostTableViewCell.swift */,
 				328E25F8242C75BF0017464F /* EventsHostedTableViewCell.swift */,
 				32FA40B7242EE62300F130D7 /* VoteTimeTableViewCell.swift */,
@@ -575,8 +578,8 @@
 				32BF1FC9242AFAD40021B918 /* VirtualPartyViewController.swift in Sources */,
 				32FA40B8242EE62300F130D7 /* VoteTimeTableViewCell.swift in Sources */,
 				32BF1FCD242B05070021B918 /* PostTableViewCell.swift in Sources */,
+				C4186AE2245521DA005D5E7C /* CreateNewFSCollectionViewCell.swift in Sources */,
 				32FA40B6242EE3B500F130D7 /* VoteTimeViewController.swift in Sources */,
-				32BF1FCB242AFD3E0021B918 /* TypeCollectionViewCell.swift in Sources */,
 				D80B37F3242C1D7F0034660C /* ChooseDateTableViewCell.swift in Sources */,
 				328E25FB242C75CA0017464F /* EventsJoinedTableViewCell.swift in Sources */,
 				D8EDC40E2429796E00043589 /* SceneDelegate.swift in Sources */,
@@ -586,6 +589,7 @@
 				32FA40B4242E98AD00F130D7 /* FriendTableViewCell.swift in Sources */,
 				D8EDC4162429796E00043589 /* frmU.xcdatamodeld in Sources */,
 				C497F1E7242D5F3D00AC2F2B /* Message.swift in Sources */,
+				C4186AE424552220005D5E7C /* TypeCollectionViewCell.swift in Sources */,
 				C497F1ED242D7D1A00AC2F2B /* ChatViewController.swift in Sources */,
 				D8EDC449242ACAB300043589 /* User.swift in Sources */,
 			);
