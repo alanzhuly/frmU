@@ -139,7 +139,6 @@ class MakeDetailViewController: UIViewController, UITableViewDataSource, UITable
             l.append(newPost)
             globalUser.typeToHostedPosts[type!.uid] = l
         }
-        type!.addPost(post: newPost)
         globalUser.updateUser()
         performSegue(withIdentifier: "makeSuccess", sender: sender)
        
