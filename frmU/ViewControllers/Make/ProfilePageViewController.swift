@@ -31,6 +31,17 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     @IBAction func finalizeButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "finalize", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)  {
+        if let identifier = segue.identifier {
+            if identifier == "finalize" {
+             if let dest = segue.destination as? FinalizeDateViewController, let but = sender as? UIButton {
+                dest.chosenPost = globalUser.postsHosted[but.tag]
+                }
+            }
+        }
     }
     
     
@@ -54,6 +65,8 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 300
 //    }
+    
+    //this function is temporary for checking.
     @IBAction func myFriends(_ sender: Any) {
         print("--------myFriends PRESSED--------")
         print("Check Global User: ---------------")

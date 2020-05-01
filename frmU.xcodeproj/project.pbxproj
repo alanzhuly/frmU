@@ -29,6 +29,8 @@
 		C497F1ED242D7D1A00AC2F2B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C497F1EC242D7D1A00AC2F2B /* ChatViewController.swift */; };
 		D80B37F1242C1AFC0034660C /* MakeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B37F0242C1AFC0034660C /* MakeDetailViewController.swift */; };
 		D80B37F3242C1D7F0034660C /* ChooseDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B37F2242C1D7F0034660C /* ChooseDateTableViewCell.swift */; };
+		D810D049245B86B6001E7DD9 /* FinalizeDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810D048245B86B6001E7DD9 /* FinalizeDateTableViewCell.swift */; };
+		D810D04B245B8723001E7DD9 /* FinalizeDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D810D04A245B8723001E7DD9 /* FinalizeDateViewController.swift */; };
 		D815E701242C88F100958B0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D815E700242C88F100958B0C /* LoginViewController.swift */; };
 		D815E707242D924C00958B0C /* friendSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = D815E706242D924C00958B0C /* friendSpace.swift */; };
 		D815E709242F3EFB00958B0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D815E708242F3EFB00958B0C /* GoogleService-Info.plist */; };
@@ -91,6 +93,8 @@
 		C497F1EC242D7D1A00AC2F2B /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		D80B37F0242C1AFC0034660C /* MakeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDetailViewController.swift; sourceTree = "<group>"; };
 		D80B37F2242C1D7F0034660C /* ChooseDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDateTableViewCell.swift; sourceTree = "<group>"; };
+		D810D048245B86B6001E7DD9 /* FinalizeDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FinalizeDateTableViewCell.swift; path = frmU/View/FinalizeDateTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		D810D04A245B8723001E7DD9 /* FinalizeDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FinalizeDateViewController.swift; path = frmU/View/FinalizeDateViewController.swift; sourceTree = SOURCE_ROOT; };
 		D815E700242C88F100958B0C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D815E706242D924C00958B0C /* friendSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendSpace.swift; sourceTree = "<group>"; };
 		D815E708242F3EFB00958B0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -285,6 +289,8 @@
 		D8EDC445242AB15D00043589 /* You */ = {
 			isa = PBXGroup;
 			children = (
+				D810D04A245B8723001E7DD9 /* FinalizeDateViewController.swift */,
+				D810D048245B86B6001E7DD9 /* FinalizeDateTableViewCell.swift */,
 				328E25F6242C72180017464F /* ProfilePageViewController.swift */,
 			);
 			path = You;
@@ -570,6 +576,7 @@
 				D8EDC447242AB1F600043589 /* PartyData.swift in Sources */,
 				32FA40B2242E943300F130D7 /* CreateYourFriendSpaceViewController.swift in Sources */,
 				32BF1FD3242C570A0021B918 /* CreatePartyTypeViewController.swift in Sources */,
+				D810D04B245B8723001E7DD9 /* FinalizeDateViewController.swift in Sources */,
 				D8EDC40C2429796E00043589 /* AppDelegate.swift in Sources */,
 				32BF1FCF242B08C40021B918 /* PartyTimeCollectionViewCell.swift in Sources */,
 				D815E707242D924C00958B0C /* friendSpace.swift in Sources */,
@@ -578,6 +585,7 @@
 				32BF1FC9242AFAD40021B918 /* VirtualPartyViewController.swift in Sources */,
 				32FA40B8242EE62300F130D7 /* VoteTimeTableViewCell.swift in Sources */,
 				32BF1FCD242B05070021B918 /* PostTableViewCell.swift in Sources */,
+				D810D049245B86B6001E7DD9 /* FinalizeDateTableViewCell.swift in Sources */,
 				C4186AE2245521DA005D5E7C /* CreateNewFSCollectionViewCell.swift in Sources */,
 				32FA40B6242EE3B500F130D7 /* VoteTimeViewController.swift in Sources */,
 				D80B37F3242C1D7F0034660C /* ChooseDateTableViewCell.swift in Sources */,

@@ -52,10 +52,10 @@ class CreatePartyTypeViewController: UIViewController, UICollectionViewDelegate,
         super.viewDidLoad()
         partyTypeCollectionView.delegate = self
         partyTypeCollectionView.dataSource = self
-        partyTypeCollectionView.reloadData()
         self.imagePickerController = UIImagePickerController()
         self.imagePickerController.delegate = self
         refreshData()
+        partyTypeCollectionView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)  {
@@ -80,7 +80,8 @@ class CreatePartyTypeViewController: UIViewController, UICollectionViewDelegate,
             cell.partyImage.image = globalUser.myFriendSpace[index].image
             cell.typeNameLabel.text = globalUser.myFriendSpace[index].name
             cell.typeBackgroundLabel .layer.cornerRadius = cell.typeBackgroundLabel.frame.width / 2
-            cell.typeBackgroundLabel.layer.borderWidth = 3
+            cell.typeBackgroundLabel.layer.borderWidth = 1
+            cell.typeBackgroundLabel.alpha = 0.5
                                   cell.typeBackgroundLabel.layer.masksToBounds = false
            return cell
         }

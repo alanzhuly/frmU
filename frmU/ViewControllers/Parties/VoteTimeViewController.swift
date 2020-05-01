@@ -51,6 +51,7 @@ class VoteTimeViewController: UIViewController, UITableViewDelegate, UITableView
             let nowV = Int(p.date[index][1])!
             cell.currentVote.text = "current vote: \(nowV)"
             p.date[index][1] = String(Int(p.date[index][1])!+1)
+            globalUser.updateUser()
         }
     }
     
@@ -58,6 +59,7 @@ class VoteTimeViewController: UIViewController, UITableViewDelegate, UITableView
         let index = indexPath.row
         if let p = postToJoin {
             p.date[index][1] = String(Int(p.date[index][1])!-1)
+            globalUser.updateUser()
         }
     }
 }

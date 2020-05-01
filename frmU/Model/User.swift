@@ -55,13 +55,10 @@ class User {
         myFriendSpace.append(disfriendSpace)
     }
     
-    func changeUsername(newName : String) {
-        
-        
-    }
-    
-    func addPostsToType(post : Post) {
-        
+    //function to join posts
+    func joinPosts (joinedPost: Post) {
+        self.postsJoined.append(joinedPost)
+        updateUser()
     }
     
     // return friends of self

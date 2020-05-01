@@ -45,7 +45,42 @@ class Post {
         self.description = description
         self.friendSpace.addPost(post: self)
     }
+    
+    func voteTime(Chosendate: String) {
+        for i in 0..<date.count {
+            if self.date[i][0] == Chosendate {
+                var num = Int(date[i][1])!
+                num += 1
+                self.date[i][1] = "\(num)"
+            }
+        }
+    }
+    
+    func JustDateString() -> [String] {
+        var DateString:[String] = []
+        for i in self.date {
+            let getDateStr = i[0]
+            let inputFormatter = DateFormatter()
+            inputFormatter.dateFormat = "MM/dd/yy HH:mm"
+            let showDate = inputFormatter.date(from: i[0])
+            inputFormatter.dateFormat = "MM-dd,HH:mm"
+            let resultString = inputFormatter.string(from: showDate!)
+            DateString.append(resultString)
+        }
+        return DateString
+    }
+    
+    //Choose the final Date
+    func finalizeDate(Chosendate: String) {
+        var newDateList: [[String]] = []
+        for i in self.date {
+            if i[0] == Chosendate {
+                newDateList.append(i)
+            }
+        }
+        self.date = newDateList
         
+    }
     
 }
 
@@ -219,7 +254,9 @@ func retrieveUser(uid: String) {
 //2. make sure to update "My Friends" friendSpace
 //3. refresh all information in friendSpace too.
 //refresh Data for the current user: globalUser
+//completion: () -> Any
 func refreshData() {
+
     retrieveUser(uid: globalUID)
 }
 

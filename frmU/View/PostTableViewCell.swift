@@ -10,7 +10,7 @@ import UIKit
 
 class PostTableViewCell: UITableViewCell,  UICollectionViewDelegate, UICollectionViewDataSource {
     
-    let times1 = ["3/22 8pm", "3/23 9am", "3/26 4pm", "3/21 10am", "3/19 4pm"]
+    var times1 = ["3/22 8pm", "3/23 9am", "3/26 4pm", "3/21 10am", "3/19 4pm"]
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
