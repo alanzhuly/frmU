@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -117,17 +117,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="JjT-GL-axq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1J-Ee-pke">
-                                <rect key="frame" x="184" y="743" width="46" height="30"/>
-                                <state key="normal" title="Create"/>
-                                <connections>
-                                    <action selector="createButtonPressed:" destination="Szg-IX-dv0" eventType="touchUpInside" id="eq0-uO-d1y"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bld-Gc-bt4">
                                 <rect key="frame" x="87" y="446" width="238" height="275"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -154,7 +147,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="140" id="K4X-Pa-K1y"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -220,8 +213,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image for FriendSpace:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAa-w9-Rhu">
-                                <rect key="frame" x="103.5" y="250" width="207.5" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <rect key="frame" x="96" y="250" width="222" height="23.5"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -229,7 +222,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="bld-Gc-bt4" firstAttribute="top" secondItem="vMO-cz-ntB" secondAttribute="bottom" constant="8" symbolic="YES" id="1qR-Ue-g6K"/>
-                            <constraint firstItem="vMO-cz-ntB" firstAttribute="centerX" secondItem="U1J-Ee-pke" secondAttribute="centerX" id="57F-xw-Ldm"/>
                             <constraint firstItem="abq-OV-IjX" firstAttribute="top" secondItem="f4R-m8-Khj" secondAttribute="bottom" constant="45" id="7zD-cL-VVK"/>
                             <constraint firstItem="vMO-cz-ntB" firstAttribute="leading" secondItem="4sy-uE-HXw" secondAttribute="leading" id="8Lv-Qp-tjm"/>
                             <constraint firstItem="bld-Gc-bt4" firstAttribute="leading" secondItem="dvk-L1-h8K" secondAttribute="leading" constant="87" id="BHF-v3-SX8"/>
@@ -247,11 +239,21 @@
                             <constraint firstItem="dvk-L1-h8K" firstAttribute="trailing" secondItem="f4R-m8-Khj" secondAttribute="trailing" constant="102" id="nQP-St-e0Q"/>
                             <constraint firstItem="abq-OV-IjX" firstAttribute="leading" secondItem="dvk-L1-h8K" secondAttribute="leading" constant="25" id="nye-l5-HvL"/>
                             <constraint firstItem="f4R-m8-Khj" firstAttribute="centerX" secondItem="vMO-cz-ntB" secondAttribute="centerX" id="q2N-OC-I9Q"/>
-                            <constraint firstItem="U1J-Ee-pke" firstAttribute="top" secondItem="bld-Gc-bt4" secondAttribute="bottom" constant="8" symbolic="YES" id="s69-4p-gcc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dvk-L1-h8K"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Create Your Friend Space" id="oWD-Ps-WVo"/>
+                    <navigationItem key="navigationItem" title="Create Your Friend Space" id="oWD-Ps-WVo">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="g8X-za-ziJ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="U1J-Ee-pke">
+                                <rect key="frame" x="348" y="7" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Create"/>
+                                <connections>
+                                    <action selector="createButtonPressed:" destination="Szg-IX-dv0" eventType="touchUpInside" id="eq0-uO-d1y"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="image" destination="f4R-m8-Khj" id="L5K-U2-pS0"/>
                         <outlet property="inviteFriends" destination="bld-Gc-bt4" id="OSh-7W-fIk"/>
@@ -469,11 +471,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vFd-lh-ksF">
-                                                    <rect key="frame" x="77" y="268" width="240" height="3"/>
+                                                    <rect key="frame" x="0.0" y="278" width="394" height="1"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="3" id="Imo-rp-LZg"/>
-                                                        <constraint firstAttribute="width" constant="240" id="sxX-kE-4UA"/>
+                                                        <constraint firstAttribute="height" constant="1" id="Imo-rp-LZg"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Host " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjj-B6-pdK">
@@ -488,7 +489,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="GHo-8X-gAd"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                     <size key="shadowOffset" width="3" height="-7"/>
@@ -534,8 +535,10 @@
                                                 <constraint firstItem="Ygj-Ky-Kz0" firstAttribute="leading" secondItem="DyQ-fL-rEA" secondAttribute="trailing" constant="10" id="j5O-SW-VGG"/>
                                                 <constraint firstItem="pAI-vv-6pB" firstAttribute="leading" secondItem="m64-O7-RTc" secondAttribute="leading" constant="10" id="lsd-D3-Uga"/>
                                                 <constraint firstItem="bEP-jg-9bg" firstAttribute="top" secondItem="iCP-8r-RbK" secondAttribute="bottom" constant="8" symbolic="YES" id="n5B-Xt-otN"/>
+                                                <constraint firstItem="vFd-lh-ksF" firstAttribute="leading" secondItem="m64-O7-RTc" secondAttribute="leading" id="nMP-ZP-JpU"/>
+                                                <constraint firstAttribute="trailing" secondItem="vFd-lh-ksF" secondAttribute="trailing" id="o9C-Mq-8Qm"/>
                                                 <constraint firstItem="bEP-jg-9bg" firstAttribute="leading" secondItem="m64-O7-RTc" secondAttribute="leading" constant="10" id="qL1-w5-I3j"/>
-                                                <constraint firstItem="vFd-lh-ksF" firstAttribute="top" secondItem="jQA-WA-2Lg" secondAttribute="bottom" constant="10" id="tuP-qV-fAe"/>
+                                                <constraint firstItem="vFd-lh-ksF" firstAttribute="top" secondItem="jQA-WA-2Lg" secondAttribute="bottom" constant="20" id="tuP-qV-fAe"/>
                                                 <constraint firstAttribute="trailing" secondItem="Ygj-Ky-Kz0" secondAttribute="trailing" constant="10" id="vmo-iE-4aj"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -603,14 +606,14 @@
                                                     <rect key="frame" x="3" y="3" width="398" height="70.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current vote: 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzU-Wl-6UO">
-                                                            <rect key="frame" x="280" y="33" width="115" height="32.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="271" y="29" width="124" height="36.5"/>
+                                                            <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="      3/22/20 Sun 7-9am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZn-ME-Mxm">
-                                                            <rect key="frame" x="5" y="4" width="388" height="24"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <rect key="frame" x="5" y="4" width="388" height="20"/>
+                                                            <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -643,7 +646,7 @@
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vote for a time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuZ-Xu-ciE">
                                 <rect key="frame" x="5" y="93" width="404" height="40"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -659,11 +662,11 @@
                                 </segments>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZY-vw-64y">
-                                <rect key="frame" x="236" y="508" width="128" height="61"/>
+                                <rect key="frame" x="231.5" y="508" width="132.5" height="59"/>
                                 <string key="text">Send me 
 Google Calendar
  invite</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -765,7 +768,7 @@ Google Calendar
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="FaJ-sK-vKj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -794,7 +797,7 @@ Google Calendar
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Study" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7V-gk-kiX">
                                                             <rect key="frame" x="5" y="80" width="100" height="20"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -842,7 +845,7 @@ Google Calendar
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="c5o-Np-X9M"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -888,14 +891,6 @@ Google Calendar
                                     <action selector="fromPhotosButtonPressed:" destination="ucu-XT-ONo" eventType="touchUpInside" id="Xwy-Rs-IYK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqK-ww-tw4">
-                                <rect key="frame" x="311" y="618" width="53" height="165"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="49"/>
-                                <state key="normal" title="➡️"/>
-                                <connections>
-                                    <action selector="toPartyDetailsView:" destination="ucu-XT-ONo" eventType="touchUpInside" id="ACf-BV-0ge"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQI-f3-rpS">
                                 <rect key="frame" x="40" y="673" width="150" height="100"/>
                                 <constraints>
@@ -913,15 +908,12 @@ Google Calendar
                             <constraint firstItem="PlJ-J0-DKd" firstAttribute="top" secondItem="jRA-4z-73i" secondAttribute="top" constant="20" id="4Cu-Gt-8zE"/>
                             <constraint firstItem="JVE-a6-nmu" firstAttribute="top" secondItem="jcI-zb-efd" secondAttribute="bottom" constant="30" id="4eh-0y-ZGr"/>
                             <constraint firstItem="pfn-tl-mgj" firstAttribute="centerX" secondItem="PlJ-J0-DKd" secondAttribute="centerX" id="4kv-wm-ayJ"/>
-                            <constraint firstItem="jRA-4z-73i" firstAttribute="trailing" secondItem="KqK-ww-tw4" secondAttribute="trailing" constant="50" id="9ER-k5-qXo"/>
                             <constraint firstItem="fQI-f3-rpS" firstAttribute="leading" secondItem="jRA-4z-73i" secondAttribute="leading" constant="40" id="9mN-Wc-g26"/>
                             <constraint firstItem="BgY-kJ-t8S" firstAttribute="top" secondItem="pfn-tl-mgj" secondAttribute="bottom" constant="320" id="Eyf-Bi-n3W"/>
-                            <constraint firstItem="jRA-4z-73i" firstAttribute="bottom" secondItem="KqK-ww-tw4" secondAttribute="bottom" constant="30" id="GW7-8c-HVw"/>
                             <constraint firstItem="PlJ-J0-DKd" firstAttribute="leading" secondItem="jRA-4z-73i" secondAttribute="leading" constant="20" id="Lhf-WD-E21"/>
                             <constraint firstItem="jRA-4z-73i" firstAttribute="trailing" secondItem="pfn-tl-mgj" secondAttribute="trailing" constant="15" id="NVl-r9-g5L"/>
                             <constraint firstItem="pfn-tl-mgj" firstAttribute="top" secondItem="PlJ-J0-DKd" secondAttribute="bottom" constant="10" id="Nfv-YG-9aC"/>
                             <constraint firstItem="PlJ-J0-DKd" firstAttribute="centerX" secondItem="kKM-Kv-KOO" secondAttribute="centerX" id="OTz-pA-FDt"/>
-                            <constraint firstItem="KqK-ww-tw4" firstAttribute="top" secondItem="JVE-a6-nmu" secondAttribute="bottom" constant="50" id="T01-u8-aNw"/>
                             <constraint firstItem="jRA-4z-73i" firstAttribute="trailing" secondItem="jcI-zb-efd" secondAttribute="trailing" constant="50" id="dYI-1h-ABR"/>
                             <constraint firstItem="jRA-4z-73i" firstAttribute="bottom" secondItem="fQI-f3-rpS" secondAttribute="bottom" constant="40" id="fOS-Cg-M7t"/>
                             <constraint firstItem="pfn-tl-mgj" firstAttribute="leading" secondItem="jRA-4z-73i" secondAttribute="leading" constant="15" id="hKW-fF-cv5"/>
@@ -934,7 +926,19 @@ Google Calendar
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jRA-4z-73i"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Create Your Party" id="fVa-Ic-GAE"/>
+                    <navigationItem key="navigationItem" title="Create Your Party" id="fVa-Ic-GAE">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="LXd-3L-geF">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KqK-ww-tw4">
+                                <rect key="frame" x="350" y="0.0" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="create"/>
+                                <connections>
+                                    <action selector="toPartyDetailsView:" destination="ucu-XT-ONo" eventType="touchUpInside" id="ACf-BV-0ge"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageLabel" destination="jcI-zb-efd" id="5p5-yn-8dY"/>
                         <outlet property="partyTypeCollectionView" destination="pfn-tl-mgj" id="dar-jk-AYf"/>
@@ -975,7 +979,7 @@ Google Calendar
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="lhH-Qw-hUj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add time slots for participants to vote for If you want a fixed time, just add one!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8p-xF-iq8">
@@ -983,7 +987,7 @@ Google Calendar
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="fv8-RC-pDU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1002,11 +1006,11 @@ Google Calendar
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ls4-E0-nQU">
-                                                    <rect key="frame" x="87" y="11.5" width="200" height="20.5"/>
+                                                    <rect key="frame" x="87" y="12" width="200" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="cKP-Kh-bsl"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1049,7 +1053,7 @@ Google Calendar
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="7tv-39-lsc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1058,7 +1062,7 @@ Google Calendar
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="ZLB-aZ-70Y"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1087,12 +1091,12 @@ Google Calendar
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="fdr-Tt-7TP"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDC-0b-U0b">
                                         <rect key="frame" x="212" y="0.0" width="30" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Dsj-yq-ZAB"/>
                                             <constraint firstAttribute="width" constant="30" id="pJD-Tg-6Xn"/>
@@ -1125,7 +1129,7 @@ Google Calendar
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="IQw-Vk-h0j"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="0.90622603530000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1612,13 +1616,13 @@ Google Calendar
             <point key="canvasLocation" x="2898.5507246376815" y="996.42857142857133"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="calendar" catalog="system" width="64" height="52"/>
-        <image name="person.circle" catalog="system" width="64" height="60"/>
-        <image name="plus.rectangle" catalog="system" width="64" height="46"/>
-        <image name="streamers-clipart-carnival-24" width="600" height="217"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Fcb-ty-7zZ"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
+        <image name="plus.rectangle" catalog="system" width="128" height="93"/>
+        <image name="streamers-clipart-carnival-24" width="600" height="217"/>
+    </resources>
 </document>
